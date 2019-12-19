@@ -1,13 +1,15 @@
 import React from 'react';
-import './App.css';
+import { Grommet, Header, Button, Menu } from 'grommet';
+import './css/App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-      </header>
-    </div>
+    <Grommet plain>
+      <Header>
+        <Button hoverIndicator />
+        {/*<Menu label="account" />*/}
+      </Header>
+    </Grommet>
   );
 }
 
