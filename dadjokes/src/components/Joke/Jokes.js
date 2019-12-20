@@ -1,10 +1,12 @@
 import React from "react";
 import { Box, Grommet } from 'grommet';
 
+import Joke from "./Joke";
+
 const Jokes = (props) => (
 	<Box direction='row' flex overflow={{ horizontal: 'hidden' }} className="main">
 		<Box flex align='center' justify='center'>
-			app body
+			<Joke />
 		</Box>
 	</Box>
 );

@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Grommet } from 'grommet';
 
-const UserBar = (props) => (
+const EntryBar = (props) => (
 	<Box
-		tag='entry'
+		tag='div'
 		direction='row'
 		align='center'
 		justify='center'
@@ -15,4 +15,4 @@ const UserBar = (props) => (
 	/>
 );
 
-export default UserBar;
+export default EntryBar;

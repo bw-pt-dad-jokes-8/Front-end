@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grommet } from 'grommet';
 
-const AppBar = (props) => (
+const BrandingBar = (props) => (
   <Box
     tag='header'
     direction='row'
@@ -15,4 +15,4 @@ const AppBar = (props) => (
   />
 );
 
-export default AppBar;
+export default BrandingBar;

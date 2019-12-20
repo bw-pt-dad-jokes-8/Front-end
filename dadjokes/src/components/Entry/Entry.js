@@ -1,13 +1,13 @@
 import React from "react";
 import {Box, Button, Grommet} from 'grommet';
 
-import UserBar from "./UserBar";
+import EntryBar from "./EntryBar";
 
 const Entry = (props) => (
-	<UserBar className="userbar">
+	<EntryBar className="userbar">
 		<Button label="Sign Up" primary>Sign Up</Button>
 		<Button label="Sign In">Sign In</Button>
-	</UserBar>
+	</EntryBar>
 );
 
 export default Entry;

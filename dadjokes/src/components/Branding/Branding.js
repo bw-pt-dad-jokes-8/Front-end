@@ -2,17 +2,17 @@ import React from "react";
 import { Button, Heading} from 'grommet';
 import { Previous, Search } from 'grommet-icons';
 
-import AppBar from "./AppBar";
+import BrandingBar from "./BrandingBar";
 
 const Branding = (props) => (
-	<AppBar className="appbar">
+	<BrandingBar className="appbar">
 		<Button icon={<Previous />} onClick={() => {}} />
 		<Heading level='3' margin='none'>Dad, Don't Farce!</Heading>
 		<Button
 			icon={<Search />}
 			onClick={() => {}}
 		/>
-	</AppBar>
+	</BrandingBar>
 );
 
 export default Branding;
