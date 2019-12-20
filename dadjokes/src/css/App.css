@@ -191,6 +191,14 @@ body .appbar {
   position: fixed;
   top: 0;
 }
+body .appbar h1 a {
+  text-decoration: none;
+  color: #2e7fd6;
+}
+.entry {
+  top: 40px;
+  position: relative;
+}
 .main {
   top: 50px;
   position: relative;
