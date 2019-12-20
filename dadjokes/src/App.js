@@ -3,7 +3,7 @@ import './css/App.css';
 import React from 'react';
 import {  Route } from "react-router-dom";
 
-import { Grommet } from 'grommet';
+import { Grommet, Layer } from 'grommet';
 
 import Branding from "./Components/Branding/Branding";
 import Entry from "./Components/Entry/Entry";

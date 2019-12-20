@@ -1,8 +1,8 @@
 import React from "react";
-import { Box } from 'grommet';
+import { Box, Header } from 'grommet';
 
 const BrandingBar = (props) => (
-  <Box
+  <Header
     tag='header'
     direction='row'
     background='light'
