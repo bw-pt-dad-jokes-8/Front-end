@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Space+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Saira+Condensed|Space+Mono&display=swap");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -186,13 +186,17 @@ sub {
   bottom: -0.25em;
 }
 body .appbar {
-  background: #2e7fd6;
-  color: #f1f227;
+  font-family: 'Saira Condensed', 'Palatino Linotype', Palatino, Palladio, 'URW Palladio L', 'Book Antiqua', Baskerville, 'Bookman Old Style', 'Bitstream Charter', 'Nimbus Roman No9 L', Garamond, 'Apple Garamond', 'ITC Garamond Narrow', 'New Century Schoolbook', 'Century Schoolbook', 'Century Schoolbook L', Georgia, serif;
+  width: 100%;
+  position: fixed;
+  top: 0;
 }
-body .appbar h1 {
-  margin: 0;
-  font-family: 'Space Mono', 'Palatino Linotype', Palatino, Palladio, 'URW Palladio L', 'Book Antiqua', Baskerville, 'Bookman Old Style', 'Bitstream Charter', 'Nimbus Roman No9 L', Garamond, 'Apple Garamond', 'ITC Garamond Narrow', 'New Century Schoolbook', 'Century Schoolbook', 'Century Schoolbook L', Georgia, serif;
-  font-weight: normal;
-  font-size: 1rem;
-  text-align: center;
+.main {
+  top: 60px;
+  position: relative;
+}
+.userbar {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }

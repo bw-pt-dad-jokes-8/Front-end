@@ -5,7 +5,7 @@ const nib = require('nib');
 const rupture = require('rupture');
 const csswring = require('csswring');
 
-gulp.task('theme', () => {
+gulp.task('app', () => {
 
 	const processors = [
 		csswring
@@ -20,5 +20,5 @@ gulp.task('theme', () => {
 });
 
 gulp.task('default', () => {
-	gulp.watch('**/*.styl',  gulp.series('theme'));
+	gulp.watch('**/*.styl',  gulp.series('app'));
 });

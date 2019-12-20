@@ -5,10 +5,10 @@ const AppBar = (props) => (
   <Box
     tag='header'
     direction='row'
+    background='light'
     align='center'
-    justify='center'
-    // background='brand'
-    pad={{ left: 'medium', right: 'medium', vertical: 'medium' }}
+    justify='between'
+    pad={{ left: 'medium', right: 'medium', vertical: 'small' }}
     elevation='medium'
     style={{ zIndex: '1' }}
     {...props}
