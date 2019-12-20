@@ -195,6 +195,11 @@ body .appbar {
   top: 60px;
   position: relative;
 }
+.search {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+}
 .userbar {
   width: 100%;
   position: fixed;

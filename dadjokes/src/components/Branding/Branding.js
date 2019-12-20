@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Heading} from 'grommet';
 import { Previous, Search } from 'grommet-icons';
 
 import BrandingBar from "./BrandingBar";
+import ShowSearch from "../ShowSearch/ShowSearch"
 
-const Branding = (props) => (
-	<BrandingBar className="appbar">
-		<Button icon={<Previous />} onClick={() => {}} />
-		<Heading level='3' margin='none'>Dad, Don't Farce!</Heading>
-		<Button
-			icon={<Search />}
-			onClick={() => {}}
-		/>
-	</BrandingBar>
-);
+export default function Branding(props) {
 
-export default Branding;
+	const [search, setSearch] = useState(false);
+
+	return (
+		<>
+			<BrandingBar className="appbar">
+				<Button icon={<Previous/>} onClick={() => {
+				}}/>
+				<Heading level='3' margin='none'>Dad, Don't Farce!</Heading>
+				<Button
+					icon={<Search/>}
+					onClick={() => setSearch(search => !search)}
+				/>
+			</BrandingBar>
+			{search && <ShowSearch />};
+		</>
+	);
+
+}
