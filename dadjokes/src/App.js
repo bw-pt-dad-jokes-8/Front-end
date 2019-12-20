@@ -3,13 +3,13 @@ import './css/App.css';
 import React from 'react';
 import {  Route } from "react-router-dom";
 
-import { Grommet, Header, Heading, Button, Menu, Box } from 'grommet';
+import { Grommet } from 'grommet';
 
-import Branding from "./components/Branding/Branding";
-import Entry from "./components/Entry/Entry";
-import Jokes from "./components/Joke/Jokes";
+import Branding from "./Components/Branding/Branding";
+import Entry from "./Components/Entry/Entry";
+import Jokes from "./Components/Joke/Jokes";
 
-import theme from "./components/Styles/Theme";
+import theme from "./Components/Styles/Theme";
 
 function App() {
 

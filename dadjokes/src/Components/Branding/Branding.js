@@ -12,11 +12,11 @@ export default function Branding(props) {
 	return (
 		<>
 			<BrandingBar className="appbar">
-				<Button icon={<Previous/>} onClick={() => {
-				}}/>
-				<Heading level='3' margin='none'>Dad, Don't Farce!</Heading>
+				{/*<Button icon={<Previous/>} onClick={() => {*/}
+				{/*}}/>*/}
+				<Heading level='1' color='primary' size='small' margin='none'>Dad, Don't Farce!</Heading>
 				<Button
-					icon={<Search/>}
+					icon={<Search color='primary'/>}
 					onClick={() => setSearch(search => !search)}
 				/>
 			</BrandingBar>
