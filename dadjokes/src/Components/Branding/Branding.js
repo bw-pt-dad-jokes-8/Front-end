@@ -13,8 +13,6 @@ export default function Branding(props) {
 	return (
 		<>
 			<BrandingBar className="appbar">
-				{/*<Button icon={<Previous/>} onClick={() => {*/}
-				{/*}}/>*/}
 				<Heading level='1' color='primary' size='small' margin='none'><Link to="/">Dad, Don't Farce!</Link></Heading>
 				<Button
 					icon={<Search color='primary'/>}

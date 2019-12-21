@@ -6,16 +6,13 @@ import { Previous } from 'grommet-icons';
 const EntryRegister = props => {
 	let history = useHistory();
 	return (
-		<Box className="entry">
-			<Header  justify='start' margin="medium" >
-				<Button
-					icon={<Previous color='primary'/>}
-					onClick={() => history.goBack()}
-				/>
-				<Heading level="2" color="primary">
-					Register
-				</Heading>
-			</Header>
+		<Box tag="section" className="entry" pad="medium" >
+			<Box tag="header" direction='row' pad="0" >
+				<Button	icon={<Previous color='primary'/>} onClick={() => history.goBack()} />
+				<Box justify='start' margin="small" >
+					<Heading level="2" color="primary" margin="small">Register</Heading>
+				</Box>
+			</Box>
 		</Box>
 	);
 };
