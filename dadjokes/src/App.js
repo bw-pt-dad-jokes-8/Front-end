@@ -1,6 +1,6 @@
 import './css/App.css';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Route } from "react-router-dom";
 
 import { Grommet } from 'grommet';
@@ -13,15 +13,20 @@ import EntryLogin from "./Components/Entry/EntryLogin";
 
 import theme from "./Components/Styles/Theme";
 
+import data from "./Data/Data"
+
 function App() {
 
+  const [farce, setFarce] = useState(data);
 
   return (
     <Grommet theme={theme}>
       <Branding />
       <Route
         exact path="/"
-        component={Jokes}
+        render={routeProps => {
+          return <Jokes {...routeProps} items={farce} />;
+        }}
       />
       <Route
         exact path="/register"
