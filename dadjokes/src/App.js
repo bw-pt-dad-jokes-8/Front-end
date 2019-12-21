@@ -19,20 +19,21 @@ function App() {
   return (
     <Grommet theme={theme}>
       <Branding />
-      <Route exact path="/" component={Jokes} />
       <Route
-        path="/register"
-        // component={EntryRegister}
-        render={() => (
-          <EntryRegister />
-        )}
+        exact path="/"
+        component={Jokes}
       />
       <Route
-        path="/login"
-        // component={EntryLogin}
-        render={() => (
-          <EntryLogin />
-        )}
+        exact path="/register"
+        render={routeProps => {
+          return <EntryRegister {...routeProps} />
+        }}
+      />
+      <Route
+        exact path="/login"
+        render={routeProps => {
+          return <EntryLogin {...routeProps} />
+        }}
       />
       <Entry />
     </Grommet>
