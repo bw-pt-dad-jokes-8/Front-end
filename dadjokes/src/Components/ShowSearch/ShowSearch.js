@@ -1,10 +1,11 @@
 import React from "react";
+import { TextInput } from "grommet";
 
 import ShowSearchBar from "./ShowSearchBar";
 
 const ShowSearch = (props) => (
 	<ShowSearchBar className="search">
-		<input type="text"/>
+		<TextInput type="text"/>
 	</ShowSearchBar>
 );
 
