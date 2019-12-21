@@ -7,7 +7,7 @@ const EntryBar = (props) => (
 		direction='row'
 		align='center'
 		justify='around'
-		background='primary'
+		background='brand'
 		// height='60px'
 		pad={{ left: 'medium', right: 'medium', vertical: 'medium' }}
 		elevation='medium'

@@ -13,9 +13,9 @@ export default function Branding(props) {
 	return (
 		<>
 			<BrandingBar className="appbar">
-				<Heading level='1' color='primary' size='small' margin='none'><Link to="/">Dad, Don't Farce!</Link></Heading>
+				<Heading level='1' color='brand' size='small' margin='none'><Link to="/">Dad, Don't Farce!</Link></Heading>
 				<Button
-					icon={<Search color='primary'/>}
+					icon={<Search color='brand'/>}
 					onClick={() => setSearch(search => !search)}
 				/>
 			</BrandingBar>
