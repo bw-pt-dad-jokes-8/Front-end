@@ -1,12 +1,12 @@
 import React from "react";
-import { RoutedButton } from 'grommet';
+import { Button } from 'grommet';
 
 import EntryBar from "./EntryBar";
 
 const Entry = (props) => (
 	<EntryBar className="userbar">
-		<RoutedButton label="Sign Up" path="/register" color="secondary" pad="medium" primary />
-		<RoutedButton label="Sign In" path="/login" color="secondary" pad="medium" />
+		<Button label="Sign Up" href="/register" color="secondary" pad="medium" primary />
+		<Button label="Sign In" href="/login" color="secondary" pad="medium" />
 	</EntryBar>
 );
 

@@ -7,7 +7,7 @@ const EntryRegister = props => {
 	let history = useHistory();
 	return (
 		<Box className="entry">
-			<Header  justify='left' margin="medium" >
+			<Header  justify='start' margin="medium" >
 				<Button
 					icon={<Previous color='primary'/>}
 					onClick={() => history.goBack()}
