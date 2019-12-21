@@ -9,7 +9,7 @@ const BrandingBar = (props) => (
     align='center'
     justify='between'
     pad={{ left: 'medium', right: 'small', vertical: 'small' }}
-    elevation='medium'
+    elevation='small'
     style={{ zIndex: '1' }}
     {...props}
   />
