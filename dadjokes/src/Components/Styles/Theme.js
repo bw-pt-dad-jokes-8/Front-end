@@ -13,6 +13,18 @@ const theme = {
 			height: '20px',
 		},
 	},
+	button: {
+		border: {
+			radius: "2px",
+			// color: "#2196f3"
+		},
+		padding: {
+			vertical: "16px",
+			// horizontal: "45rem"
+			align: "center",
+			justify: "center"
+		},
+	}
 };
 
 export default theme;
