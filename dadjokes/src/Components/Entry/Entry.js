@@ -12,6 +12,7 @@ const Entry = (props) => {
 				justify="center"
 				align="center"
 				width="50%"
+				pad="xsmall"
 			>
 				<Button
 					label="Sign Up"
@@ -19,6 +20,7 @@ const Entry = (props) => {
 					color="secondary"
 					onClick={() => history.push("/register")}
 					primary
+					{...props}
 				/>
 			</Box>
 			<Box
@@ -31,6 +33,7 @@ const Entry = (props) => {
 					fill="horizontal"
 					color="secondary"
 					onClick={() => history.push("/login")}
+					{...props}
 				/>
 			</Box>
 		</EntryBar>

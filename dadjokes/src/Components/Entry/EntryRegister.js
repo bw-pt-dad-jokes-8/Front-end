@@ -8,9 +8,9 @@ const EntryRegister = props => {
 	return (
 		<Box tag="section" className="entry" pad="medium" >
 			<Box tag="div" direction='row' pad="0" >
-				<Button	icon={<Previous color='primary'/>} onClick={() => history.goBack()} />
+				<Button	icon={<Previous color='brand'/>} onClick={() => history.goBack()} />
 				<Box justify='start' margin="small" >
-					<Heading level="2" color="primary" margin="small">Register</Heading>
+					<Heading level="2" color="brand" margin="small">Register</Heading>
 				</Box>
 			</Box>
 		</Box>

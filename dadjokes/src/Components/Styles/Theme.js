@@ -2,7 +2,7 @@
 const theme = {
 	global: {
 		colors: {
-			primary: '#2E7FD6',
+			brand: '#2E7FD6',
 			secondary: '#F1F227',
 			light: '#FFFFFF',
 			lightShade: '#E7E7E7',
@@ -15,15 +15,19 @@ const theme = {
 	},
 	button: {
 		border: {
-			radius: "2px",
+			radius: "0",
 			// color: "#2196f3"
+		},
+		margin: {
+			horizontal: "0",
 		},
 		padding: {
 			vertical: "16px",
-			// horizontal: "45rem"
-			align: "center",
-			justify: "center"
 		},
+		// color: "secondary",
+		primary: {
+			color: { dark: "primary", light: "secondary" }
+		}
 	}
 };
 
