@@ -201,6 +201,7 @@ body .appbar h1 a {
 }
 .main {
   top: 50px;
+  padding-bottom: 110px;
   position: relative;
 }
 .search {
