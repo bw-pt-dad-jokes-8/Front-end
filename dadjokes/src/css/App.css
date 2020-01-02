@@ -199,6 +199,9 @@ body .appbar h1 a {
   top: 40px;
   position: relative;
 }
+article {
+  width: 100%;
+}
 .main {
   top: 50px;
   padding-bottom: 110px;
