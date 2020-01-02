@@ -15,10 +15,8 @@ const JokePunch = (props) => (
 			justify="center"
 			flex
 			// overflow={{ horizontal: 'hidden' }}
-			pad={{
-				vertical: "small",
-				horizontal: "mall"
-			}}
+			pad="medium"
+			height="auto"
 			margin={{
 				"top": "0",
 				"bottom": "1%",
