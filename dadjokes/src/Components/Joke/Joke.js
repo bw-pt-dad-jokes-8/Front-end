@@ -1,57 +1,18 @@
 import React from "react";
 import { Box } from 'grommet';
 
+import JokeText from "./JokeText";
+import JokePunch from "./JokePunch";
+
 const Joke = (props) => (
-	<>
-		<Box
-			tag="article"
-			border={[
-					{ color: 'lightShade', size: 'medium', side: 'top' },
-					{ color: 'lightShade', size: 'medium', side: 'right' },
-					{ color: 'lightShade', size: 'medium', side: 'left' },
-					{ color: 'lightShade', size: 'small', side: 'bottom' }
-				]}
-			direction='row'
-			align="center"
-			justify="center"
-			flex overflow={{ horizontal: 'hidden' }}
-			pad="medium"
-			margin={{
-				"top": "1%",
-				"bottom": "0",
-				"left": "2%",
-				"right": "2%"
-			}}
-			round={{ corner: "top", size: "0" }}
-			width="96%"
-		>
+	<article>
+		<JokeText className="joke joke-text">
 			{props.text}
-		</Box>
-		<Box
-			tag="article"
-			border={[
-				{ color: 'lightShade', size: 'small', side: 'top' },
-				{ color: 'lightShade', size: 'medium', side: 'right' },
-				{ color: 'lightShade', size: 'medium', side: 'left' },
-				{ color: 'lightShade', size: 'medium', side: 'bottom' }
-			]}
-			direction='row'
-			align="center"
-			justify="center"
-			flex overflow={{ horizontal: 'hidden' }}
-			pad="medium"
-			margin={{
-				"top": "0",
-				"bottom": "1%",
-				"left": "2%",
-				"right": "2%"
-			}}
-			round={{ corner: "bottom", size: "0" }}
-			width="96%"
-		>
+		</JokeText>
+		<JokePunch className="joke joke-punch">
 			{props.punch}
-		</Box>
-	</>
+		</JokePunch>
+	</article>
 );
 
 export default Joke;
