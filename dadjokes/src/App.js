@@ -56,16 +56,15 @@ function App() {
         }}
       />
       <Route exact path='/dashboard' component={Dashboard}/>
-      {/* <Route path='/dashboard'
-      render= {routeProps =>{
-      return <Dashboard {...routeProps}/>
-    }}/> */}
+    {/*  /!* <Route path='/dashboard'*/}
+    {/*  render= {routeProps =>{*/}
+    {/*  return <Dashboard {...routeProps}/>*/}
+    {/*}}/> *!/*/}
       { localStorage.getItem('token') ? (
          <Dash />
         ) : (
         <Entry />
       )}
-    }}/>
 
     </Grommet>
   );
