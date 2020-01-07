@@ -1,12 +1,15 @@
 import './css/App.css';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route } from "react-router-dom";
+import axios from 'axios';
 import { Grommet } from 'grommet';
+
 import Dashboard from "./Components/Users/Dashboard.js";
 import Branding from "./Components/Branding/Branding";
 import Entry from "./Components/Entry/Entry";
-import Jokes from "./Components/Joke/Jokes";
+import Dash from "./Components/Dash/Dash";
+import JokesList from "./Components/Joke/JokesList";
 import EntryRegister from "./Components/Entry/EntryRegister";
 import EntryLogin from "./Components/Entry/EntryLogin";
 
@@ -16,7 +19,20 @@ import data from "./Data/Data"
 
 function App() {
 
-  const [farce, setFarce] = useState(data);
+  // const [farce, setFarce] = useState(data);
+  const [farce, setFarce] = useState([]);
+
+  useEffect(() =>{
+    axios
+      .get("https://dad-jokes-8.herokuapp.com/api/jokes")
+      .then(response => {
+        console.log("Jokes", response.data.jokes);
+        setFarce(response.data.jokes);
+      })
+      .catch(error => {
+        console.log("Sorry", error);
+      });
+  });
 
   return (
     <Grommet theme={theme}>
@@ -24,7 +40,7 @@ function App() {
       <Route
         exact path="/"
         render={routeProps => {
-          return <Jokes {...routeProps} items={farce} />
+          return <JokesList {...routeProps} items={farce} />
         }}
       />
       <Route
@@ -40,11 +56,17 @@ function App() {
         }}
       />
       <Route exact path='/dashboard' component={Dashboard}/>
-      {/* <Route path='/dashboard' 
+      {/* <Route path='/dashboard'
       render= {routeProps =>{
       return <Dashboard {...routeProps}/>
     }}/> */}
-      <Entry />
+      { localStorage.getItem('token') ? (
+         <Dash />
+        ) : (
+        <Entry />
+      )}
+    }}/>
+
     </Grommet>
   );
 }

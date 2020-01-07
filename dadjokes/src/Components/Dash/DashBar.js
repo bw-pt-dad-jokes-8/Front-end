@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from 'grommet';
 
-const EntryBar = (props) => (
+const DashBar = (props) => (
 	<Box
 		tag='div'
 		direction='row'
@@ -16,4 +16,4 @@ const EntryBar = (props) => (
 	/>
 );
 
-export default EntryBar;
+export default DashBar;

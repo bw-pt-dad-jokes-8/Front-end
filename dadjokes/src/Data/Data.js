@@ -37,14 +37,14 @@ export default [
 	},
 	{
 		id: 7,
-		joke: " man walked in to a bar with some asphalt on his arm.",
+		joke: 'Man walked in to a bar with some asphalt on his arm.',
 		punch: 'He said “Two beers please, one for me and one for the road."',
 		bgColor: "#DC143C"
 	},
 	{
 		id: 8,
 		joke: 'Thanks for explaining the word "many" to me.',
-		punch: "It means a lot.",
+		punch: 'It means a lot.',
 		bgColor: "#F5F5DC"
 	}
 ];

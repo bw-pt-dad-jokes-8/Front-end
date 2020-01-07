@@ -6,7 +6,7 @@ import axios from "axios";
 
 function LoginForm({ values, errors, touched, isSubmitting }) {
   return (
-      
+
     <Form>
       <div>
         {touched.username && errors.username && <p>{errors.username}</p>}
@@ -16,10 +16,10 @@ function LoginForm({ values, errors, touched, isSubmitting }) {
         {touched.password && errors.password && <p>{errors.password}</p>}
         <Field type="password" name="password" placeholder="Password" />
       </div>
-      
+
       <button type="submit" disabled={isSubmitting}>Login &rarr;</button>
     </Form>
-    
+
   );
 }
 
@@ -28,11 +28,11 @@ const FormikLoginForm = withFormik({
     return {
       username: username || "",
       password: password || "",
-      
+
     };
   },
   validationSchema: Yup.object().shape({
-      username: Yup.string()
+    username: Yup.string()
       .required("username is required"),
     password: Yup.string()
       .min(6, "Password must be 6 characters or longer")
@@ -60,5 +60,5 @@ const FormikLoginForm = withFormik({
     }
   }
 })(LoginForm);
- 
+
 export default FormikLoginForm;
