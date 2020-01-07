@@ -40,7 +40,7 @@ function App() {
           return <EntryLogin {...routeProps} />
         }}
       />
-      <Route path='/dashboard' component={Dashboard}/>
+      <Route exact path='/dashboard' component={Dashboard}/>
       {/* <Route path='/dashboard' 
       render= {routeProps =>{
       return <Dashboard {...routeProps}/>
