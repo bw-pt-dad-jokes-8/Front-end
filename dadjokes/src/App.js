@@ -7,6 +7,7 @@ import { Grommet } from 'grommet';
 
 import Branding from "./Components/Branding/Branding";
 import Entry from "./Components/Entry/Entry";
+import Dash from "./Components/Dash/Dash";
 import Jokes from "./Components/Joke/Jokes";
 import EntryRegister from "./Components/Entry/EntryRegister";
 import EntryLogin from "./Components/Entry/EntryLogin";
@@ -44,7 +45,11 @@ function App() {
       render= {routeProps =>{
       return <Dashboard {...routeProps}/>
     }}/>
-      <Entry />
+      { localStorage.getItem('token') ? (
+         <Dash />
+        ) : (
+        <Entry />
+      )}
     </Grommet>
   );
 }

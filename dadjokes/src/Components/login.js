@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { withFormik, Form, Field} from "formik";
+import { withFormik,  Field} from "formik";
+import { Form, FormField, TextInput, Button } from "grommet";
 import * as Yup from "yup";
 import axios from "axios";
 
@@ -9,15 +10,19 @@ function LoginForm({ values, errors, touched, isSubmitting }) {
       
     <Form>
       <div>
-        {touched.username && errors.username && <p>{errors.username}</p>}
-        <Field type="text" name="username" placeholder="username" />
+        <FormField label="username" htmlFor="text-input" >
+          {touched.username && errors.username && <p>{errors.username}</p>}
+          <TextInput type="text" name="username" placeholder="username" />
+        </FormField>
       </div>
       <div>
+        <FormField label="password" htmlFor="text-input" >
         {touched.password && errors.password && <p>{errors.password}</p>}
-        <Field type="password" name="password" placeholder="Password" />
+        <TextInput type="password" name="password" placeholder="Password" />
+        </FormField>
       </div>
       
-      <button type="submit" disabled={isSubmitting}>Login &rarr;</button>
+      <Button type="submit" disabled={isSubmitting}>Login &rarr;</Button>
     </Form>
     
   );
