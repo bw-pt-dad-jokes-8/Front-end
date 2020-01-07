@@ -12,7 +12,7 @@ const Entry = (props) => {
 				justify="center"
 				align="center"
 				width="50%"
-				pad="xsmall"
+				pad="small"
 			>
 				<Button
 					label="Sign Up"
