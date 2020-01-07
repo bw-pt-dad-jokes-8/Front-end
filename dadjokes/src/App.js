@@ -3,7 +3,7 @@ import './css/App.css';
 import React, { useState } from 'react';
 import { Route } from "react-router-dom";
 import { Grommet } from 'grommet';
-import Dashboard from "./Components/Dashboard.js";
+import Dashboard from "./Components/Users/Dashboard.js";
 import Branding from "./Components/Branding/Branding";
 import Entry from "./Components/Entry/Entry";
 import Jokes from "./Components/Joke/Jokes";
