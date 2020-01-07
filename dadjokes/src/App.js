@@ -5,7 +5,7 @@ import { Route } from "react-router-dom";
 import axios from 'axios';
 import { Grommet } from 'grommet';
 
-import Dashboard, {axiosWithAuth} from "./Components/Dashboard";
+import Dashboard from "./Components/Dashboard";
 import Branding from "./Components/Branding/Branding";
 import Entry from "./Components/Entry/Entry";
 import Dash from "./Components/Dash/Dash";
