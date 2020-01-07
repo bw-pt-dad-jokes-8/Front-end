@@ -2,9 +2,8 @@ import './css/App.css';
 
 import React, { useState } from 'react';
 import { Route } from "react-router-dom";
-
 import { Grommet } from 'grommet';
-
+import Dashboard from "./Components/Users/Dashboard.js";
 import Branding from "./Components/Branding/Branding";
 import Entry from "./Components/Entry/Entry";
 import Jokes from "./Components/Joke/Jokes";
@@ -40,6 +39,11 @@ function App() {
           return <EntryLogin {...routeProps} />
         }}
       />
+      <Route exact path='/dashboard' component={Dashboard}/>
+      {/* <Route path='/dashboard' 
+      render= {routeProps =>{
+      return <Dashboard {...routeProps}/>
+    }}/> */}
       <Entry />
     </Grommet>
   );

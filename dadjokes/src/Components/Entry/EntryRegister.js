@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { Box, Header, Heading, Button } from 'grommet';
 import { Previous } from 'grommet-icons';
+import FormikRegisterForm from '../register';
 
 const EntryRegister = props => {
 	let history = useHistory();
@@ -11,6 +12,7 @@ const EntryRegister = props => {
 				<Button	icon={<Previous color='brand'/>} onClick={() => history.goBack()} />
 				<Box justify='start' margin="small" >
 					<Heading level="2" color="brand" margin="small">Register</Heading>
+						<FormikRegisterForm history={history}/>
 				</Box>
 			</Box>
 		</Box>
