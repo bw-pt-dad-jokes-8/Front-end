@@ -11,7 +11,20 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
-    "yup": "^0.28.0"
+    "yup": "^0.28.0",
+    "csswring": "^7.0.0",
+    "grommet": "^2.9.0",
+    "grommet-icons": "^4.4.0",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-stylus": "^2.7.0",
+    "nib": "^1.1.2",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "rupture": "^0.7.1",
+    "serialize-javascript": "^2.1.2",
+    "styled-components": "^4.4.1",
+    "stylus": "^0.54.7"
   },
   "scripts": {
     "start": "react-scripts start",

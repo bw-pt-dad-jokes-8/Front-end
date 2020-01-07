@@ -45,16 +45,20 @@ const FormikRegisterForm = withFormik({
     .email("Email not valid")
     .required('Email is required'),
   }),
-  handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
+  handleSubmit(values, { resetForm, setErrors, setSubmitting, formikBag }) {
     if (values.email === "alreadytaken@atb.dev") {
       setErrors({ email: "That email is already taken" });
     } else {
+      console.log(values);
       axios
-        .post(" ", values)
+        .post("https://dad-jokes-8.herokuapp.com/api/register ", values)
         .then(res => {
+          localStorage.setItem('token', res.data.token);
+          formikBag.props.history.push('/dashboard');
           console.log(res); // Data was created successfully and logs to console
-          resetForm();
-          setSubmitting(false);
+          formikBag.resetForm();
+          formikBag.setSubmitting(false);
+
         })
         .catch(err => {
           console.log(err); // There was an error creating the data and logs to console

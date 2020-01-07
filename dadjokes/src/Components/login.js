@@ -44,11 +44,11 @@ const FormikLoginForm = withFormik({
       formikBag.setErrors({ username: "That username is already taken" });
     } else {
       axios
-        .post("https://dad-jokes-8.herokuapp.com/api/login ", values)
+        .post("https://dad-jokes-8.herokuapp.com/api/login", values)
         .then(res => {
           localStorage.setItem('token', res.data.token);
-          formikBag.props.history.push('/dashboard');
-          console.log(res); // Data was created successfully and logs to console
+          formikBag.props.history.push('/');
+          //console.log(res); // Data was created successfully and logs to console
           formikBag.resetForm();
           formikBag.setSubmitting(false);
 

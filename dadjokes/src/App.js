@@ -1,16 +1,51 @@
-import React from 'react';
-import './App.css';
-import FormikLoginForm from './Components/login';
-import FormikRegisterForm from './Components/register';
+import './css/App.css';
+
+import React, { useState } from 'react';
+import { Route } from "react-router-dom";
+import Dashboard from "./Components/Dashboard";
+import { Grommet } from 'grommet';
+
+import Branding from "./Components/Branding/Branding";
+import Entry from "./Components/Entry/Entry";
+import Jokes from "./Components/Joke/Jokes";
+import EntryRegister from "./Components/Entry/EntryRegister";
+import EntryLogin from "./Components/Entry/EntryLogin";
+
+import theme from "./Components/Styles/Theme";
+
+import data from "./Data/Data"
 
 function App() {
+
+  const [farce, setFarce] = useState(data);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <FormikLoginForm/>
-        <FormikRegisterForm/>
-      </header>
-    </div>
+    <Grommet theme={theme}>
+      <Branding />
+      <Route
+        exact path="/"
+        render={routeProps => {
+          return <Jokes {...routeProps} items={farce} />;
+        }}
+      />
+      <Route
+        exact path="/register"
+        render={routeProps => {
+          return <EntryRegister {...routeProps} />
+        }}
+      />
+      <Route
+        exact path="/login"
+        render={routeProps => {
+          return <EntryLogin {...routeProps} />
+        }}
+      />
+      <Route path='/dashboard' 
+      render= {routeProps =>{
+      return <Dashboard {...routeProps}/>
+    }}/>
+      <Entry />
+    </Grommet>
   );
 }
 
