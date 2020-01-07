@@ -9,10 +9,10 @@ export default function Jokes(props) {
 	console.log("items", jokesList);
 
 	return (
-		<Box direction='row' flex overflow="auto" className="main">
-			<Box flex align='center' justify='center'>
+		<Box direction='row' flex overflow="auto" className="main" pad="0">
+			<Box flex align='center' justify='center' pad="0">
 				{jokesList.map(item => (
-					<Joke text={item.joke} punch={item.punch} />
+					<Joke text={item.joke} punch={item.punch} key={item.id} />
 				))}
 			</Box>
 		</Box>

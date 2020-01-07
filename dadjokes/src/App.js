@@ -25,7 +25,7 @@ function App() {
       <Route
         exact path="/"
         render={routeProps => {
-          return <Jokes {...routeProps} items={farce} />;
+          return <Jokes {...routeProps} items={farce} />
         }}
       />
       <Route
