@@ -40,10 +40,11 @@ function App() {
           return <EntryLogin {...routeProps} />
         }}
       />
-      <Route path='/dashboard' 
+      <Route path='/dashboard' component={Dashboard}/>
+      {/* <Route path='/dashboard' 
       render= {routeProps =>{
       return <Dashboard {...routeProps}/>
-    }}/>
+    }}/> */}
       <Entry />
     </Grommet>
   );
