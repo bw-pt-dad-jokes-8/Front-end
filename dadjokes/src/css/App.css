@@ -201,10 +201,11 @@ body .appbar h1 a {
 }
 article {
   width: 100%;
+  text-align: center;
 }
 .main {
   top: 50px;
-  padding-bottom: 110px;
+  margin-bottom: 110px;
   position: relative;
 }
 .search {

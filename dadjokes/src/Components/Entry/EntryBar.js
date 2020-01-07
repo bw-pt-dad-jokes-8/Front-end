@@ -9,7 +9,7 @@ const EntryBar = (props) => (
 		justify='around'
 		background='brand'
 		// height='60px'
-		pad={{ left: 'medium', right: 'medium', vertical: 'medium' }}
+		pad={{ left: 'medium', right: 'medium', vertical: 'small' }}
 		elevation='medium'
 		style={{ zIndex: '1' }}
 		{...props}
