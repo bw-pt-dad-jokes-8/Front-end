@@ -1,30 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { withFormik,  Field} from "formik";
-import { Form, FormField, TextInput, Button } from "grommet";
+import { withFormik, Form, Field} from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
 function LoginForm({ values, errors, touched, isSubmitting }) {
   return (
-      
+
     <Form>
       <div>
-        <FormField label="username" htmlFor="text-input" >
-          {touched.username && errors.username && <p>{errors.username}</p>}
-          <TextInput type="text" name="username" placeholder="username" />
-        </FormField>
+        {touched.username && errors.username && <p>{errors.username}</p>}
+        <Field type="text" name="username" placeholder="username" />
       </div>
       <div>
-        <FormField label="password" htmlFor="text-input" >
         {touched.password && errors.password && <p>{errors.password}</p>}
-        <TextInput type="password" name="password" placeholder="Password" />
-        </FormField>
+        <Field type="password" name="password" placeholder="Password" />
       </div>
-      
-      <Button type="submit" disabled={isSubmitting}>Login &rarr;</Button>
+
+      <button type="submit" disabled={isSubmitting}>Login &rarr;</button>
     </Form>
-    
+
   );
 }
 
@@ -33,11 +28,11 @@ const FormikLoginForm = withFormik({
     return {
       username: username || "",
       password: password || "",
-      
+
     };
   },
   validationSchema: Yup.object().shape({
-      username: Yup.string()
+    username: Yup.string()
       .required("username is required"),
     password: Yup.string()
       .min(6, "Password must be 6 characters or longer")
@@ -52,7 +47,7 @@ const FormikLoginForm = withFormik({
         .post("https://dad-jokes-8.herokuapp.com/api/login", values)
         .then(res => {
           localStorage.setItem('token', res.data.token);
-          formikBag.props.history.push('/');
+          formikBag.props.history.push('/dashboard');
           //console.log(res); // Data was created successfully and logs to console
           formikBag.resetForm();
           formikBag.setSubmitting(false);
@@ -65,5 +60,5 @@ const FormikLoginForm = withFormik({
     }
   }
 })(LoginForm);
- 
+
 export default FormikLoginForm;

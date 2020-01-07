@@ -5,7 +5,7 @@ import { Route } from "react-router-dom";
 import axios from 'axios';
 import { Grommet } from 'grommet';
 
-import Dashboard from "./Components/Dashboard";
+import Dashboard from "./Components/Users/Dashboard.js";
 import Branding from "./Components/Branding/Branding";
 import Entry from "./Components/Entry/Entry";
 import Dash from "./Components/Dash/Dash";
@@ -55,15 +55,18 @@ function App() {
           return <EntryLogin {...routeProps} />
         }}
       />
-      <Route path='/dashboard' 
+      <Route exact path='/dashboard' component={Dashboard}/>
+      {/* <Route path='/dashboard'
       render= {routeProps =>{
       return <Dashboard {...routeProps}/>
-    }}/>
+    }}/> */}
       { localStorage.getItem('token') ? (
          <Dash />
         ) : (
         <Entry />
       )}
+    }}/>
+
     </Grommet>
   );
 }
