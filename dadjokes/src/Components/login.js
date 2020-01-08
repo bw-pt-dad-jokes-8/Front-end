@@ -3,23 +3,26 @@ import ReactDOM from "react-dom";
 import { withFormik, Form, Field} from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { Box, Header, Heading, Button } from 'grommet';
 
 function LoginForm({ values, errors, touched, isSubmitting }) {
   return (
+    <Box pad="small">
+      <Form>
+        <Box pad={{ bottom: 'small' }}>
+          <label>Username</label>
+          <Field type="text" name="username" />
+          {touched.username && errors.username && <p>{errors.username}</p>}
+        </Box>
+        <Box pad={{ bottom: 'small' }}>
+          <label>Password</label>
+          <Field type="password" name="password" />
+          {touched.password && errors.password && <p>{errors.password}</p>}
+        </Box>
 
-    <Form>
-      <div>
-        {touched.username && errors.username && <p>{errors.username}</p>}
-        <Field type="text" name="username" placeholder="username" />
-      </div>
-      <div>
-        {touched.password && errors.password && <p>{errors.password}</p>}
-        <Field type="password" name="password" placeholder="Password" />
-      </div>
-
-      <button type="submit" disabled={isSubmitting}>Login &rarr;</button>
-    </Form>
-
+        <button type="submit" disabled={isSubmitting}>Login &rarr;</button>
+      </Form>
+    </Box>
   );
 }
 

@@ -9,7 +9,7 @@ const EntryRegister = props => {
 	return (
 		<Box tag="section" className="entry" pad="medium" >
 			<Box tag="div" direction='row' pad="0" >
-				<Box direction="row" align="start" pad={{ top: '20px' }}>
+				<Box direction="row" align="start" pad={{ top: 'small' }}>
 					<Button	icon={<Previous color='brand'/>} onClick={() => history.goBack()} />
 				</Box>
 				<Box justify='start' margin="small" >

@@ -218,3 +218,6 @@ article {
   position: fixed;
   bottom: 0;
 }
+.userbar button.entry-button {
+  text-align: center;
+}
