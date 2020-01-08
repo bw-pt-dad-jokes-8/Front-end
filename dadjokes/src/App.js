@@ -50,7 +50,7 @@ function App() {
 
   return (
     <Grommet theme={theme}>
-      <Branding />
+      <Branding setSearchTerm={setSearchTerm} />
       <Route
         exact path="/"
         render={routeProps => {
