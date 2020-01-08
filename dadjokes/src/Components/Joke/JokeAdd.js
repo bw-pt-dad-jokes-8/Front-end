@@ -1,32 +1,24 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { withFormik, Form, Field} from "formik";
-import * as Yup from "yup";
-import axios from "axios";
-import { Box, Header, Heading, Button } from 'grommet';
-import FormikLoginForm from "../login";
+import { useHistory } from "react-router-dom";
+import { Box, Heading, Button } from 'grommet';
+import { Previous } from 'grommet-icons';
+import FormikAddJokeForm from "./JokeAddForm";
 
-function AddJokeForm({ values, errors, touched, isSubmitting }) {
+const JokeAdd = () => {
+	let history = useHistory();
 	return (
-		<Box pad="small">
-			<Form>
-				<Box pad={{ bottom: 'small' }}>
-					<label>Username</label>
-					<Field type="text" name="username" />
-					{touched.username && errors.username && <p>{errors.username}</p>}
+		<Box tag="section" className="entry" pad="medium" >
+			<Box tag="div" direction='row' pad="0" >
+				<Box direction="row" align="start" pad={{ top: 'small' }}>
+					<Button	icon={<Previous color='brand'/>} onClick={() => history.goBack()} />
 				</Box>
-				<Box pad={{ bottom: 'small' }}>
-					<label>Password</label>
-					<Field type="password" name="password" />
-					{touched.password && errors.password && <p>{errors.password}</p>}
+				<Box justify='start' margin="small" >
+					<Heading level="2" color="brand" margin="small">Add your Joke</Heading>
+					<FormikAddJokeForm />
 				</Box>
-
-				<button type="submit" disabled={isSubmitting}>Login &rarr;</button>
-			</Form>
+			</Box>
 		</Box>
 	);
-}
+};
 
-function FormikAddJokeForm() {}
-
-export default FormikAddJokeForm;
+export default JokeAdd;

@@ -7,11 +7,12 @@ import JokePunch from "./JokePunch";
 const Joke = (props) => (
 	<article>
 		<JokeText className="joke joke-text">
-			{props.text}
-		</JokeText>
-		<JokePunch className="joke joke-punch">
+			{props.text}<br />
 			{props.punch}
-		</JokePunch>
+		</JokeText>
+		{/*<JokePunch className="joke joke-punch">*/}
+		{/*	{props.punch}*/}
+		{/*</JokePunch>*/}
 	</article>
 );
 

@@ -27,5 +27,4 @@ export default function Branding(props) {
 			{search && <ShowSearch setSearchTerm={props.setSearchTerm} />};
 		</>
 	);
-
 }
