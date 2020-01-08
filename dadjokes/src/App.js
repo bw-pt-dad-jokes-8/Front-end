@@ -12,8 +12,10 @@ import Dash from "./Components/Dash/Dash";
 import JokesList from "./Components/Joke/JokesList";
 import EntryRegister from "./Components/Entry/EntryRegister";
 import EntryLogin from "./Components/Entry/EntryLogin";
+import JokeAdd from "./Components/Joke/JokeAdd";
 
 import theme from "./Components/Styles/Theme";
+
 
 // import data from "./Data/Data"
 
@@ -28,7 +30,7 @@ function App() {
     axios
       .get("https://dad-jokes-8.herokuapp.com/api/jokes")
       .then(response => {
-        console.log("Jokes", response.data.jokes);
+        console.log("Response", response.data.jokes);
         setFarce(response.data.jokes);
         setSearchTerm(" ");
       })
@@ -37,16 +39,19 @@ function App() {
       });
   }, []);
 
+  console.log("Farce", farce);
+
   useEffect(() => {
     const results = farce.filter(item => {
       return item.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.answer.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.status.toLowerCase().includes(searchTerm.toLowerCase());
     });
-    console.log("Results:", results);
 
     setSearchResults(results);
   }, [searchTerm]);
+
+  console.log("Search Results:", searchResults);
 
   return (
     <Grommet theme={theme}>
@@ -70,6 +75,7 @@ function App() {
         }}
       />
       <Route exact path='/dashboard' component={Dashboard}/>
+      <Route exact path='/add' component={JokeAdd} />
     {/*  /!* <Route path='/dashboard'*/}
     {/*  render= {routeProps =>{*/}
     {/*  return <Dashboard {...routeProps}/>*/}
