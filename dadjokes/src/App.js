@@ -23,7 +23,7 @@ function App() {
 
   // const [farce, setFarce] = useState(data);
   const [farce, setFarce] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(" ");
   const [searchResults, setSearchResults] = useState(farce);
 
   useEffect(() =>{
@@ -32,7 +32,8 @@ function App() {
       .then(response => {
         console.log("Response", response.data.jokes);
         setFarce(response.data.jokes);
-        setSearchTerm(" ");
+        // setSearchResults(response.data.jokes);
+        setSearchTerm("");
       })
       .catch(error => {
         console.log("Sorry", error);
