@@ -3,27 +3,31 @@ import ReactDOM from "react-dom";
 import { withFormik, Form, Field} from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import {Box} from "grommet";
 
 function RegisterForm({ values, errors, touched, isSubmitting }) {
   return (
-      
-    <Form>
-      <div>
-        {touched.username && errors.username && <p>{errors.username}</p>}
-        <Field type="text" name="username" placeholder="Username" />
-      </div>
-      <div>
-        {touched.password && errors.password && <p>{errors.password}</p>}
-        <Field type="password" name="password" placeholder="Password" />
-      </div>
-      <div>
-        {touched.email && errors.email && <p>{errors.email}</p>}
-        <Field type="email" name="email" placeholder="email" />
-      </div>
-      
-      <button disabled={isSubmitting} >Register &rarr;</button>
-    </Form>
-    
+    <Box pad="small">
+      <Form>
+        <Box pad={{ bottom: 'small' }}>
+          <label>Username</label>
+          <Field type="text" name="username"  />
+          {touched.username && errors.username && <p>{errors.username}</p>}
+        </Box>
+        <Box pad={{ bottom: 'small' }}>
+          <label>Password</label>
+          <Field type="password" name="password"  />
+          {touched.password && errors.password && <p>{errors.password}</p>}
+        </Box>
+        <Box pad={{ bottom: 'small' }}>
+          <label>E-mail address</label>
+          <Field type="email" name="email" />
+          {touched.email && errors.email && <p>{errors.email}</p>}
+        </Box>
+
+        <button disabled={isSubmitting} >Register &rarr;</button>
+      </Form>
+    </Box>
   );
 }
 

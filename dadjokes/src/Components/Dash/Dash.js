@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Box, Button } from 'grommet';
+import {Dashboard, User, Home, Logout } from 'grommet-icons';
 
 import DashBar from "./DashBar";
 
@@ -11,11 +12,13 @@ const Dash = (props) => {
 			<Box
 				justify="center"
 				align="center"
-				width="25%"
+				width="33%"
 				pad="small"
 			>
 				<Button
-					label="Home"
+					className="entry-button"
+					// label="Home"
+					icon={<Home color='brand'/>}
 					fill="horizontal"
 					color="secondary"
 					onClick={() => history.push("/")}
@@ -23,29 +26,31 @@ const Dash = (props) => {
 					{...props}
 				/>
 			</Box>
+			{/*<Box*/}
+			{/*	justify="center"*/}
+			{/*	align="center"*/}
+			{/*	width="25%"*/}
+			{/*	pad="small"*/}
+			{/*>*/}
+			{/*	<Button*/}
+			{/*		label="Add Joke"*/}
+			{/*		fill="horizontal"*/}
+			{/*		color="secondary"*/}
+			{/*		onClick={() => history.push("/")}*/}
+			{/*		primary*/}
+			{/*		{...props}*/}
+			{/*	/>*/}
+			{/*</Box>*/}
 			<Box
 				justify="center"
 				align="center"
-				width="25%"
+				width="33%"
 				pad="small"
 			>
 				<Button
-					label="Add Joke"
-					fill="horizontal"
-					color="secondary"
-					onClick={() => history.push("/")}
-					primary
-					{...props}
-				/>
-			</Box>
-			<Box
-				justify="center"
-				align="center"
-				width="25%"
-				pad="small"
-			>
-				<Button
-					label="Dashboard"
+					className="entry-button"
+					// label="Dashboard"
+					icon={<Dashboard color='brand'/>}
 					fill="horizontal"
 					color="secondary"
 					onClick={() => history.push("/dashboard")}
@@ -56,14 +61,16 @@ const Dash = (props) => {
 			<Box
 				justify="center"
 				align="center"
-				width="25%"
+				width="33%"
 				pad="small"
 			>
 				<Button
-					label="Logut"
+					className="entry-button"
+					// label="Logout"
+					icon={<Logout color='brand'/>}
 					fill="horizontal"
 					color="secondary"
-					onClick={() => history.push("/")}
+					onClick={() => localStorage.removeItem('token') && history.push("/")}
 					primary
 					{...props}
 				/>

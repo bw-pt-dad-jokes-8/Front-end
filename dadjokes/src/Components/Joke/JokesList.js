@@ -3,7 +3,7 @@ import { Box } from 'grommet';
 
 import Joke from "./Joke";
 
-export default function Jokes(props) {
+export default function JokesList(props) {
 
 	const jokesList = props.items;
 	console.log("items", jokesList);
@@ -11,9 +11,10 @@ export default function Jokes(props) {
 	return (
 		<Box direction='row' flex overflow="auto" className="main" pad="0" >
 			<Box className="jokes-list" flex align='center' justify='center' pad="0">
-				{jokesList.map(item => (
-					<Joke text={item.question} punch={item.answer} key={item.id} />
-				))}
+				{jokesList.map(item => {
+						return <Joke text={item.question} punch={item.answer} key={item.id} />
+					})
+				}
 			</Box>
 		</Box>
 	);
