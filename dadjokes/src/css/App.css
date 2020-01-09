@@ -221,3 +221,9 @@ article {
 .userbar button.entry-button {
   text-align: center;
 }
+.delete_button{
+  width: 100%;
+  border: #ff0 1px solid;
+  background-color: #ff0;
+  color: #2e7fd6;
+}

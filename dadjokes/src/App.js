@@ -12,9 +12,10 @@ import Dash from "./Components/Dash/Dash";
 import JokesList from "./Components/Joke/JokesList";
 import EntryRegister from "./Components/Entry/EntryRegister";
 import EntryLogin from "./Components/Entry/EntryLogin";
-import JokeAdd from "./Components/Joke/JokeAdd";
+import UpdateJoke from "./Components/Joke/UpdateJoke";
 
 import theme from "./Components/Styles/Theme";
+import FormikUpdateJokeForm from './Components/Joke/UpdateJokeForm';
 
 
 // import data from "./Data/Data"
@@ -25,12 +26,14 @@ function App() {
   const [farce, setFarce] = useState([]);
   const [searchTerm, setSearchTerm] = useState(" ");
   const [searchResults, setSearchResults] = useState(farce);
-
+  // const [jokeId, setJokeId] = useState(farce)
+ 
   useEffect(() =>{
     axios
       .get("https://dad-jokes-8.herokuapp.com/api/jokes")
       .then(response => {
-        console.log("Response", response.data.jokes);
+       
+        console.log("Response", Object.values(response.data.jokes));
         setFarce(response.data.jokes);
         // setSearchResults(response.data.jokes);
         setSearchTerm("");
@@ -39,21 +42,33 @@ function App() {
         console.log("Sorry", error);
       });
   }, []);
-
-  console.log("Farce", farce);
+    // const jokeIds = farce
+  
 
   useEffect(() => {
     const results = farce.filter(item => {
+      //console.log("id",item.id);
       return item.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.answer.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.status.toLowerCase().includes(searchTerm.toLowerCase());
+        
+        
     });
-
+    
     setSearchResults(results);
   }, [searchTerm]);
 
-  console.log("Search Results:", searchResults);
+//   const jokeId = Object.values(searchResults)
+//   const objArr = jokeId.map(function(){
+    
+//  return [ jokeId[0]];
+// });
+//  console.log("Farce", objArr);
+//  console.log("id",Object.values(objArr))
 
+  console.log("Search Results:", searchResults);
+  //console.log("newState",ids);
+  
   return (
     <Grommet theme={theme}>
       <Branding setSearchTerm={setSearchTerm} />
@@ -75,18 +90,22 @@ function App() {
           return <EntryLogin {...routeProps} />
         }}
       />
-      <Route exact path='/dashboard' component={Dashboard}/>
-      <Route exact path='/add' component={JokeAdd} />
-    {/*  /!* <Route path='/dashboard'*/}
-    {/*  render= {routeProps =>{*/}
-    {/*  return <Dashboard {...routeProps}/>*/}
-    {/*}}/> *!/*/}
+      <Route exact path='/dashboard' 
+      render ={ routeProps =>{
+       return <Dashboard {...routeProps} farce= {farce}/>}}
+       />
+        <Route exact path='/update' 
+      render ={ routeProps =>{
+       return <FormikUpdateJokeForm {...routeProps} newState= {searchResults}/>}}
+       />
+      {/* <Route exact path='/update' component={FormikUpdateJokeForm}/> */}
+      {/* <Route exact path='/add' component={JokeAdd} /> */}
+    
       { localStorage.getItem('token') ? (
          <Dash />
         ) : (
         <Entry />
       )}
-
     </Grommet>
   );
 }

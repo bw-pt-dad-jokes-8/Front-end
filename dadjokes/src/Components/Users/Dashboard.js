@@ -17,9 +17,11 @@ export const axiosWithAuth =() => {
     });
 };
 
-export default function(){
+export default function(props){
     if(localStorage.getItem('token')){
       let history = useHistory();
+      let state = props.farce;
+      //console.log(state)
         return (
           <Box tag="section" className="entry" pad="medium" >
             <Box tag="div" direction='row' pad="0" >
@@ -44,7 +46,7 @@ export default function(){
                   <FormikAddJokeForm />
                 </Box>
                 <Box tag="div">
-                  <UserJokesList />
+                  <UserJokesList farce = {state} />
                 </Box>
               </Box>
             </Box>

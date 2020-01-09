@@ -6,7 +6,7 @@ import Joke from "./Joke";
 export default function JokesList(props) {
 
 	const jokesList = props.items;
-	console.log("Jokes List", jokesList);
+	//console.log("Jokes List", jokesList);
 
 	return (
 		<Box direction='row' flex overflow="auto" className="main" pad="0" >
