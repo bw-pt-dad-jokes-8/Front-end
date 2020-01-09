@@ -39,24 +39,15 @@ const UserJoke = (props) => {
 			<Box tag="div" margin={{ top: "0.5rem" }} width="100%">
 				{props.punch}
 			</Box>
-			<Box>
-				<span className="delete_button"  onClick={() => {deleteJoke()}}>Delete Joke</span>
-			</Box>
-			{/* <UpdateJokeForm newState={newState}/> */}
-			<Box>
-				<span className="delete_button"  onClick={() => history.push("/update")}
-					{...props} >Update</span> 
-				 
 			<Box tag="div" flex direction="row" margin={{ top: "0.5rem" }}>
-				<Button icon={<FormEdit color='brand'/>}  className="button button-edit"/>
-				<Button icon={<FormTrash color='brand'/>} className="button button-del" />
+				<Button icon={<FormEdit color='brand'/>}  className="button button-edit" onClick={() => history.push("/update")}{...props}/>
+				<Button icon={<FormTrash color='brand'/>} className="button button-del" onClick={() => {deleteJoke()}}/>
 				{/*<Box pad="0">*/}
 
 				{/*</Box>*/}
 				{/*<Box pad="0">*/}
 
 				{/*</Box>*/}
-			</Box>
 			</Box>
 		</JokeText>
 	</article>

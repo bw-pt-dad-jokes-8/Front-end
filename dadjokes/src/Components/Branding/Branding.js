@@ -24,7 +24,7 @@ export default function Branding(props) {
 					onClick={() => setSearch(search => !search)}
 				/>
 			</BrandingBar>
-			{search && <ShowSearch setSearchTerm={props.setSearchTerm} />};
+			{search && <ShowSearch setSearchTerm={props.setSearchTerm} />}<br />
 		</>
 	);
 }
