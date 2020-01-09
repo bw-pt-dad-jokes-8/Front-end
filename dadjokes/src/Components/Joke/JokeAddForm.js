@@ -14,23 +14,24 @@ function AddJokeForm({ values, errors, touched }) {
 	return (
 		<Box pad="small">
 			<Form>
-				<Box pad={{ bottom: 'small' }}>
+				<Box pad={{ bottom: 'medium' }}>
 					<label>Joke</label>
 					<Field type="text" name="question" />
 					{touched.question && errors.question && <p>{errors.question}</p>}
 				</Box>
-				<Box pad={{ bottom: 'small' }}>
+				<Box pad={{ bottom: 'medium' }}>
 					<label>Punch-line</label>
 					<Field type="text" name="answer" />
 					{touched.answer && errors.answer && <p>{errors.answer}</p>}
 				</Box>
-				<Box pad={{ bottom: 'small' }}>
+				<Box pad={{ bottom: 'medium' }}>
 					<label className="checkbox-container">
-						Public?
+						<Box tag="span">Public?</Box>
 						<Field
 							type="checkbox"
 							name="status"
 							checked={values.status}
+							className="check-box"
 						/>
 						<span className="checkmark" />
 					</label>
