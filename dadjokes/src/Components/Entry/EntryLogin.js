@@ -10,9 +10,9 @@ const EntryLogin = props => {
 		<Box tag="section" className="entry" pad="medium" >
 			<Box tag="div" direction='row' pad="0" >
 				<Box direction="row" align="start" pad={{ top: 'small' }}>
-					<Button	icon={<Previous color='brand'/>} onClick={() => history.goBack()} />
+					<Button	icon={<Previous color='brand'/>} onClick={() => history.goBack()} className="back-button"/>
 				</Box>
-				<Box justify='start' margin="small" >
+				<Box justify='start' margin="small" flex>
 					<Heading level="2" color="brand" margin="small">Login</Heading>
 					<FormikLoginForm history={history}/>
 				</Box>
