@@ -7,9 +7,9 @@ import { Box } from 'grommet';
 import {axiosWithAuth} from '../Users/Dashboard'
 
 function AddJokeForm({ values, errors, touched }) {
-	console.log("values", values);
-	console.log("errors", errors);
-	console.log("touched", touched);
+	// console.log("values", values);
+	// console.log("errors", errors);
+	// console.log("touched", touched);
 
 	return (
 		<Box pad="small">

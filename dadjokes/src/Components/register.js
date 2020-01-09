@@ -58,9 +58,9 @@ const FormikRegisterForm = withFormik({
         .post("https://dad-jokes-8.herokuapp.com/api/register ", values)
         .then(res => {
           localStorage.setItem('token', res.data.token);
-          formikBag.props.history.push('/dashboard');
-          console.log(res); // Data was created successfully and logs to console
-          localStorage.setItem("info", res.data.info);
+          // formikBag.props.history.push('/dashboard');
+          console.log("Registered", res.data); // Data was created successfully and logs to console
+          // localStorage.setItem("info", res.data.info);
           localStorage.setItem("id", res.data.info.id);
           formikBag.resetForm();
           formikBag.setSubmitting(false);
