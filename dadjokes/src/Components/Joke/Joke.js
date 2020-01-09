@@ -7,10 +7,10 @@ import JokePunch from "./JokePunch";
 const Joke = (props) => (
 	<article>
 		<JokeText className="joke joke-text">
-			<Box tag="div">
+			<Box tag="div" width="100%">
 				{props.text}
 			</Box>
-			<Box tag="div">
+			<Box tag="div" margin={{ top: "1rem" }} width="100%">
 				{props.punch}
 			</Box>
 		</JokeText>

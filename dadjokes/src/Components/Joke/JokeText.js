@@ -10,7 +10,7 @@ const JokeText = (props) => (
 				{ color: 'lightShade', size: 'medium', side: 'left' },
 				{ color: 'lightShade', size: 'medium', side: 'bottom' }
 			]}
-			direction='row'
+			direction='column'
 			align="center"
 			justify="center"
 			flex
@@ -19,7 +19,7 @@ const JokeText = (props) => (
 			height="auto"
 			margin={{
 				"top": "1%",
-				"bottom": "0",
+				"bottom": "1%",
 				"left": "2%",
 				"right": "2%"
 			}}
