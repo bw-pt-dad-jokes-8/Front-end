@@ -27,6 +27,17 @@ const UserJoke = (props) => {
 				
 			  });
 			}
+			const populateUpdateHandler = ()=>{
+				const joke= {
+					id: props.id,
+					question: props.text,
+					answer: props.punch,
+					status: props.status
+				}
+
+				props.populateJoke(joke)
+				history.push("/update")
+			}
 	
 	return (
 	
@@ -44,7 +55,7 @@ const UserJoke = (props) => {
 			</Box>
 			{/* <UpdateJokeForm newState={newState}/> */}
 			<Box>
-				<span className="delete_button"  onClick={() => history.push("/update")}
+				<span className="delete_button"  onClick={populateUpdateHandler}
 					{...props} >Update</span> 
 				 
 			<Box tag="div" flex direction="row" margin={{ top: "0.5rem" }}>

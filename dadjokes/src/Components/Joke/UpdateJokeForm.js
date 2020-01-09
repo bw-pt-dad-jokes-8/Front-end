@@ -7,14 +7,12 @@ import {axiosWithAuth} from '../Users/Dashboard'
 import { Previous } from 'grommet-icons';
 import { useHistory } from "react-router-dom";
 
-const UpdateJokeForm = ({ newState, errors, touched }) =>{
+const UpdateJokeForm = ({ values, errors, touched }) =>{
 	let history = useHistory();
-	const id = newState.id;
-		console.log("id",newState.id);
-	 console.log("newState", newState);
+	
 	// console.log("errors", errors);
 	// console.log("touched", touched);
-	console.log("props", newState);
+	
 	return (
 
 		<Box tag="section" className="entry" pad="medium" >
@@ -43,7 +41,7 @@ const UpdateJokeForm = ({ newState, errors, touched }) =>{
 						<Field
 							type="checkbox"
 							name="status"
-							checked={newState.status}
+							checked={values.status}
 						/>
 						<span className="checkmark" />
 					</label>
@@ -60,12 +58,12 @@ const UpdateJokeForm = ({ newState, errors, touched }) =>{
 
 const FormikUpdateJokeForm = withFormik({
 
-	mapPropsTonewState({ user_id, question, answer, status}) {
+	mapPropsToValues({joke, user_id, question, answer, status}) {
 		return {
 			user_id: Number(user_id) || "",
-			question: question || "",
-			answer: answer || "",
-			status: status || "",
+			question: joke.question || "",
+			answer: joke.answer || "",
+			status: joke.status || "",
 		};
 	},
 
@@ -74,21 +72,21 @@ const FormikUpdateJokeForm = withFormik({
 		answer: Yup.string().required("Add a Punch-line!")
 	}),
 
-	handleSubmit( newState, { setStatus, resetForm }) {
-		console.log("submitting", newState);
-		const id = newState.id;
-		console.log(newState.id);
+	handleSubmit( values, {props, setStatus, resetForm }) {
+		console.log();
+		
+		
 		const newValue = {
-			...newState,
-			id: id
+			...values,
+			user_id: localStorage.getItem("id")
 		};
 		axiosWithAuth()
-			.put(`https://dad-jokes-8.herokuapp.com/api/restricted/jokes/${id}`, newValue)
+			.put(`https://dad-jokes-8.herokuapp.com/api/restricted/jokes/${props.joke.id}`, newValue)
 			.then(response => {
 				console.log("success", response);
 				setStatus(response.data);
 
-				resetForm();
+				props.history.push("/dashboard");
 			})
 			.catch(error => console.log(error.response));
 	}
