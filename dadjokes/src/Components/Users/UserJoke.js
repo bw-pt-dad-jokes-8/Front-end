@@ -47,7 +47,6 @@ const UserJoke = (props) => {
 				 
 			</Box>
 		</JokeText>
-		
 	</article>
 )};
 
