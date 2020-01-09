@@ -26,7 +26,7 @@ function AddJokeForm({ values, errors, touched }) {
 				</Box>
 				<Box pad={{ bottom: 'small' }}>
 					<label className="checkbox-container">
-						Private?
+						Public?
 						<Field
 							type="checkbox"
 							name="status"

@@ -3,6 +3,8 @@ import axios from 'axios';
 import {Box, Heading, Button} from "grommet";
 import {AddCircle, Previous} from "grommet-icons";
 import {useHistory} from "react-router-dom";
+import FormikAddJokeForm from "../Joke/JokeAddForm";
+import UserJokesList from "./UserJokesList";
 
 export const axiosWithAuth =() => {
     const token = localStorage.getItem('token');
@@ -28,14 +30,21 @@ export default function(){
                 <Heading level="2" margin="small">
                   Authorized
                 </Heading>
-                <Box>
-                  <Button
-                    label="Add Joke"
-                    icon={<AddCircle color='brand'/>}
-                    fill="horizontal"
-                    color="secondary"
-                    onClick={() => history.push("/add")}
-                    />
+                {/*<Box>*/}
+                {/*  <Button*/}
+                {/*    label="Add Joke"*/}
+                {/*    icon={<AddCircle color='brand'/>}*/}
+                {/*    fill="horizontal"*/}
+                {/*    color="secondary"*/}
+                {/*    onClick={() => history.push("/add")}*/}
+                {/*    />*/}
+                {/*</Box>*/}
+                <Box justify='start' margin="0" >
+                  <Heading level="3" color="brand" margin="small">Add your Joke</Heading>
+                  <FormikAddJokeForm />
+                </Box>
+                <Box tag="div">
+                  <UserJokesList />
                 </Box>
               </Box>
             </Box>
