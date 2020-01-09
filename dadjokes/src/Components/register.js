@@ -59,7 +59,7 @@ const FormikRegisterForm = withFormik({
         .then(res => {
           localStorage.setItem('token', res.data.token);
           // formikBag.props.history.push('/dashboard');
-          console.log("Registered", res.data); // Data was created successfully and logs to console
+          //console.log("Registered", res.data); // Data was created successfully and logs to console
           // localStorage.setItem("info", res.data.info);
           localStorage.setItem("id", res.data.info.id);
           formikBag.resetForm();

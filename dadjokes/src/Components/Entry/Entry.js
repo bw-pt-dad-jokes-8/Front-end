@@ -6,6 +6,7 @@ import EntryBar from "./EntryBar";
 
 const Entry = (props) => {
 	let history = useHistory();
+	console.log(props)
 	return (
 		<EntryBar className="userbar">
 			<Box
