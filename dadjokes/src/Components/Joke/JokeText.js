@@ -8,7 +8,7 @@ const JokeText = (props) => (
 				{ color: 'lightShade', size: 'medium', side: 'top' },
 				{ color: 'lightShade', size: 'medium', side: 'right' },
 				{ color: 'lightShade', size: 'medium', side: 'left' },
-				{ color: 'lightShade', size: 'small', side: 'bottom' }
+				{ color: 'lightShade', size: 'medium', side: 'bottom' }
 			]}
 			direction='row'
 			align="center"

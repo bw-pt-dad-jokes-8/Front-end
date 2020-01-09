@@ -4,6 +4,7 @@ import { withFormik, Form, Field} from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { Box } from 'grommet';
+import {axiosWithAuth} from '../Users/Dashboard'
 
 function AddJokeForm({ values, errors, touched }) {
 	console.log("values", values);
@@ -44,10 +45,10 @@ const FormikAddJokeForm = withFormik({
 
 	mapPropsToValues({id, user_id, question, answer, status}) {
 		return {
-			user_id: user_id || "",
+			user_id: Number(user_id) || "",
 			question: question || "",
 			answer: answer || "",
-			status: status || "public",
+			status: status || "",
 		};
 	},
 
@@ -58,8 +59,12 @@ const FormikAddJokeForm = withFormik({
 
 	handleSubmit(values, { setStatus, resetForm }) {
 		console.log("submitting", values);
-		axios
-			.post("https://dad-jokes-8.herokuapp.com/api/restricted/jokes/", values)
+		const newValue = {
+			...values,
+			user_id: localStorage.getItem("id")
+		};
+		axiosWithAuth()
+			.post("https://dad-jokes-8.herokuapp.com/api/restricted/jokes", newValue)
 			.then(response => {
 				console.log("success", response);
 				setStatus(response.data);
