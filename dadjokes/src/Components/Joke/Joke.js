@@ -10,7 +10,7 @@ const Joke = (props) => (
 			<Box tag="div" width="100%">
 				{props.text}
 			</Box>
-			<Box tag="div" margin={{ top: "1rem" }} width="100%">
+			<Box tag="div" margin={{ top: "0.5rem" }} width="100%">
 				{props.punch}
 			</Box>
 		</JokeText>
