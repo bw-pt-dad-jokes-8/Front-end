@@ -29,20 +29,11 @@ export default function(props){
                 <Button	icon={<Previous color='brand'/>} onClick={() => history.goBack()} className="back-button"/>
               </Box>
               <Box justify='start' margin="small" flex>
-                <Heading level="2" margin="small">
-                  Authorized
+                <Heading level="2" color="brand" margin="small">
+                  Hi,
                 </Heading>
-                {/*<Box>*/}
-                {/*  <Button*/}
-                {/*    label="Add Joke"*/}
-                {/*    icon={<AddCircle color='brand'/>}*/}
-                {/*    fill="horizontal"*/}
-                {/*    color="secondary"*/}
-                {/*    onClick={() => history.push("/add")}*/}
-                {/*    />*/}
-                {/*</Box>*/}
                 <Box justify='start' margin="0" >
-                  <Heading level="3" color="brand" margin="small">Add your Joke</Heading>
+                  <Heading level="3" margin="small">Add your Joke</Heading>
                   <FormikAddJokeForm />
                 </Box>
                 <Box tag="div">
