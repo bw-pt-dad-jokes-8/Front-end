@@ -7,69 +7,63 @@ import {axiosWithAuth} from '../Users/Dashboard'
 import { Previous } from 'grommet-icons';
 import { useHistory } from "react-router-dom";
 
-const UpdateJokeForm = ({ newState, errors, touched }) =>{
+const UpdateJokeForm = ({ values, errors, touched }) =>{
 	let history = useHistory();
-	const id = newState.id;
-		console.log("id",newState.id);
-	 console.log("newState", newState);
+	
 	// console.log("errors", errors);
 	// console.log("touched", touched);
-	console.log("props", newState);
+	
 	return (
 
 		<Box tag="section" className="entry" pad="medium" >
 			<Box tag="div" direction='row' pad="0" >
 				<Box direction="row" align="start" pad={{ top: 'small' }}>
-					<Button	icon={<Previous color='brand'/>} onClick={() => history.goBack()} className="back-button"/>
+					<Button	icon={<Previous color='brand'/>} onClick={() => history.goBack()} />
 				</Box>
-				<Box justify='start' margin="small" flex>
-					<Heading level="2" color="brand" margin="small">
-						Hi,
-					</Heading>
-					<Box justify='start' margin="0" >
-						<Heading level="3" margin="small">Update your Joke</Heading>
-						<Box pad="small">
-							<Form>
-								<Box pad={{ bottom: 'medium' }}>
-									<label>Joke</label>
-									<Field type="text" name="question" />
-									{touched.question && errors.question && <p>{errors.question}</p>}
-								</Box>
-								<Box pad={{ bottom: 'medium' }}>
-									<label>Punch-line</label>
-									<Field type="text" name="answer" />
-									{touched.answer && errors.answer && <p>{errors.answer}</p>}
-								</Box>
-								<Box pad={{ bottom: 'medium' }}>
-									<label className="checkbox-container">
-										<Box tag="span">Public?</Box>
-										<Field
-											type="checkbox"
-											name="status"
-											checked={newState.status}
-											className="check-box"
-										/>
-										<span className="checkmark" />
-									</label>
-								</Box>
-								<button type="submit">Update Joke &rarr;</button>
-							</Form>
-						</Box>
-					</Box>
+				<Box justify='start' margin="small" >
+					<Heading level="2" color="brand" margin="small">Update your Joke</Heading>
+
+		<Box pad="small">
+			<Form>
+				<Box pad={{ bottom: 'small' }}>
+					<label>Joke</label>
+					<Field type="text" name="question" />
+					{touched.question && errors.question && <p>{errors.question}</p>}
 				</Box>
+				<Box pad={{ bottom: 'small' }}>
+					<label>Punch-line</label>
+					<Field type="text" name="answer" />
+					{touched.answer && errors.answer && <p>{errors.answer}</p>}
+				</Box>
+				<Box pad={{ bottom: 'small' }}>
+					<label className="checkbox-container">
+						Public?
+						<Field
+							type="checkbox"
+							name="status"
+							checked={values.status}
+						/>
+						<span className="checkmark" />
+					</label>
+				</Box>
+				<button type="submit">Update Joke &rarr;</button>
+			</Form>
+		</Box>
+
+		</Box>
 			</Box>
 		</Box>
 	);
-};
+}
 
 const FormikUpdateJokeForm = withFormik({
 
-	mapPropsTonewState({ user_id, question, answer, status}) {
+	mapPropsToValues({joke, user_id, question, answer, status}) {
 		return {
 			user_id: Number(user_id) || "",
-			question: question || "",
-			answer: answer || "",
-			status: status || "",
+			question: joke.question || "",
+			answer: joke.answer || "",
+			status: joke.status || "",
 		};
 	},
 
@@ -78,21 +72,21 @@ const FormikUpdateJokeForm = withFormik({
 		answer: Yup.string().required("Add a Punch-line!")
 	}),
 
-	handleSubmit( newState, { setStatus, resetForm }) {
-		console.log("submitting", newState);
-		const id = newState.id;
-		console.log(newState.id);
+	handleSubmit( values, {props, setStatus, resetForm }) {
+		console.log();
+		
+		
 		const newValue = {
-			...newState,
-			id: id
+			...values,
+			user_id: localStorage.getItem("id")
 		};
 		axiosWithAuth()
-			.put(`https://dad-jokes-8.herokuapp.com/api/restricted/jokes/${id}`, newValue)
+			.put(`https://dad-jokes-8.herokuapp.com/api/restricted/jokes/${props.joke.id}`, newValue)
 			.then(response => {
 				console.log("success", response);
 				setStatus(response.data);
 
-				resetForm();
+				props.history.push("/dashboard");
 			})
 			.catch(error => console.log(error.response));
 	}

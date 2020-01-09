@@ -27,7 +27,18 @@ function App() {
   const [searchTerm, setSearchTerm] = useState(" ");
   const [searchResults, setSearchResults] = useState(farce);
   // const [jokeId, setJokeId] = useState(farce)
- 
+ const [joke, setJoke] = useState({
+   id: null,
+   question: "",
+   answer: "",
+   status: "",
+   isEditing: false,
+ })
+
+  const populateJoke =({id, question, answer, status}) =>{
+    setJoke({id, question, answer, status, isEditing:true})
+  }
+
   useEffect(() =>{
     axios
       .get("https://dad-jokes-8.herokuapp.com/api/jokes")
@@ -92,11 +103,11 @@ function App() {
       />
       <Route exact path='/dashboard' 
       render ={ routeProps =>{
-       return <Dashboard {...routeProps} farce= {farce}/>}}
+       return <Dashboard {...routeProps} farce= {farce} populateJoke={populateJoke}/>}}
        />
         <Route exact path='/update' 
       render ={ routeProps =>{
-       return <FormikUpdateJokeForm {...routeProps} newState= {searchResults}/>}}
+       return <FormikUpdateJokeForm {...routeProps} newState= {searchResults} joke={joke}/>}}
        />
       {/* <Route exact path='/update' component={FormikUpdateJokeForm}/> */}
       {/* <Route exact path='/add' component={JokeAdd} /> */}

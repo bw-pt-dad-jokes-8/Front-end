@@ -37,7 +37,7 @@ export default function(props){
                   <FormikAddJokeForm />
                 </Box>
                 <Box tag="div">
-                  <UserJokesList farce = {state} />
+                  <UserJokesList farce = {state} populateJoke={props.populateJoke}/>
                 </Box>
               </Box>
             </Box>
