@@ -196,12 +196,23 @@ body .appbar h1 a {
   color: #2e7fd6;
 }
 .entry {
-  top: 40px;
+  top: 44px;
   position: relative;
+  margin-right: 1rem;
+}
+.entry .back-button {
+  margin-right: -5px;
+  padding: 10px;
 }
 article {
   width: 100%;
   text-align: center;
+}
+article button.button {
+  background: #f1f227;
+  padding: 2px;
+  border: 2px solid #7aade4;
+  margin: 0 3px;
 }
 .main {
   top: 50px;
