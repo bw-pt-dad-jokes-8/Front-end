@@ -4,12 +4,12 @@ import { Box } from 'grommet';
 const JokeText = (props) => (
 		<Box
 			tag="div"
-			border={[
-				{ color: 'lightShade', size: 'medium', side: 'top' },
-				{ color: 'lightShade', size: 'medium', side: 'right' },
-				{ color: 'lightShade', size: 'medium', side: 'left' },
-				{ color: 'lightShade', size: 'medium', side: 'bottom' }
-			]}
+			// border={[
+			// 	{ color: 'lightShade', size: 'medium', side: 'top' },
+			// 	{ color: 'lightShade', size: 'medium', side: 'right' },
+			// 	{ color: 'lightShade', size: 'medium', side: 'left' },
+			// 	{ color: 'lightShade', size: 'medium', side: 'bottom' }
+			// ]}
 			direction='column'
 			align="center"
 			justify="center"
