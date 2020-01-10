@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import { withFormik, Form, Field} from "formik";
 import * as Yup from "yup";
 import { Box, Heading, Button } from 'grommet';
@@ -55,7 +55,7 @@ const UpdateJokeForm = ({ values, errors, touched }) =>{
 			</Box>
 		</Box>
 	);
-}
+};
 
 const FormikUpdateJokeForm = withFormik({
 
@@ -64,7 +64,7 @@ const FormikUpdateJokeForm = withFormik({
 			user_id: Number(user_id) || "",
 			question: joke.question || "",
 			answer: joke.answer || "",
-			status: joke.status || status,
+			status: joke.status || joke.status,
 		};
 	},
 

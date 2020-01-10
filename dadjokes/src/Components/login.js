@@ -1,9 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import { withFormik, Form, Field} from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import { Box, Header, Heading, Button } from 'grommet';
+import { Box } from 'grommet';
 
 function LoginForm({ values, errors, touched, isSubmitting }) {
   return (

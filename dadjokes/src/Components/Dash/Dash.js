@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Box, Button } from 'grommet';
-import {Dashboard, User, Home, Logout } from 'grommet-icons';
+import {Dashboard, Home, Logout } from 'grommet-icons';
 
 import DashBar from "./DashBar";
 

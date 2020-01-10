@@ -6,7 +6,7 @@ import { Search } from 'grommet-icons';
 import BrandingBar from "./BrandingBar";
 import ShowSearch from "../ShowSearch/ShowSearch"
 
-import Logo from "../../logo.svg";
+// import Logo from "../../logo.svg";
 
 export default function Branding(props) {
 
