@@ -20,6 +20,10 @@
 			cursor pointer
 			//font-size 22px
 			user-select none
+			&:hover
+				input
+					~ .checkmark
+						background-color #e7e7e7
 			input
 				&.check-box
 					position absolute
@@ -27,6 +31,11 @@
 					cursor pointer
 					height 0
 					width 0
+					&:checked
+						~ .checkmark
+							background-color primary
+							&:after
+								display block
 			.checkmark
 				position absolute
 				top 0
@@ -34,3 +43,16 @@
 				height 18px
 				width 18px
 				background-color #e7e7e7
+				&:after
+					content ""
+					position absolute
+					display none
+					left 5px
+					top 1px
+					width 5px
+					height 10px
+					border solid white
+					border-width: 0 3px 3px 0
+					-webkit-transform rotate(45deg)
+					-ms-transform rotate(45deg)
+					transform rotate(45deg)

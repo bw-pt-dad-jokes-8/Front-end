@@ -49,7 +49,7 @@ const FormikAddJokeForm = withFormik({
 			user_id: Number(user_id) || "",
 			question: question || "",
 			answer: answer || "",
-			status: status || "",
+			status: status || false,
 		};
 	},
 
