@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import { withFormik, Form, Field} from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -44,7 +44,7 @@ function AddJokeForm({ values, errors, touched }) {
 
 const FormikAddJokeForm = withFormik({
 
-	mapPropsToValues({id, user_id, question, answer, status}) {
+	mapPropsToValues({ user_id, question, answer, status }) {
 		return {
 			user_id: Number(user_id) || "",
 			question: question || "",

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {Box, Heading, Button} from "grommet";
-import {AddCircle, Previous} from "grommet-icons";
+import { Previous} from "grommet-icons";
 import {useHistory} from "react-router-dom";
 import FormikAddJokeForm from "../Joke/JokeAddForm";
 import UserJokesList from "./UserJokesList";

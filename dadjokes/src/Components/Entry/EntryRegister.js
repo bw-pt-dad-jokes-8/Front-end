@@ -1,10 +1,10 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Box, Header, Heading, Button } from 'grommet';
+import { Box, Heading, Button } from 'grommet';
 import { Previous } from 'grommet-icons';
 import FormikRegisterForm from '../register';
 
-const EntryRegister = props => {
+const EntryRegister = () => {
 	let history = useHistory();
 	return (
 		<Box tag="section" className="entry" pad="medium" >

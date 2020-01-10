@@ -12,7 +12,7 @@ import Dash from "./Components/Dash/Dash";
 import JokesList from "./Components/Joke/JokesList";
 import EntryRegister from "./Components/Entry/EntryRegister";
 import EntryLogin from "./Components/Entry/EntryLogin";
-import UpdateJoke from "./Components/Joke/UpdateJoke";
+// import UpdateJoke from "./Components/Joke/UpdateJoke";
 
 import theme from "./Components/Styles/Theme";
 import FormikUpdateJokeForm from './Components/Joke/UpdateJokeForm';
@@ -33,18 +33,17 @@ function App() {
    answer: "",
    status: "",
    isEditing: false,
- })
+ });
 
   const populateJoke =({id, question, answer, status}) =>{
     setJoke({id, question, answer, status, isEditing:true})
-  }
+  };
 
   useEffect(() =>{
     axios
       .get("https://dad-jokes-8.herokuapp.com/api/jokes")
       .then(response => {
-       
-        console.log("Response", Object.values(response.data.jokes));
+        // console.log("Response", Object.values(response.data.jokes));
         setFarce(response.data.jokes);
         // setSearchResults(response.data.jokes);
         setSearchTerm("");
@@ -62,8 +61,6 @@ function App() {
       return item.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.answer.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.status.toLowerCase().includes(searchTerm.toLowerCase());
-        
-        
     });
     
     setSearchResults(results);
@@ -77,7 +74,7 @@ function App() {
 //  console.log("Farce", objArr);
 //  console.log("id",Object.values(objArr))
 
-  console.log("Search Results:", searchResults);
+  // console.log("Search Results:", searchResults);
   //console.log("newState",ids);
   
   return (
