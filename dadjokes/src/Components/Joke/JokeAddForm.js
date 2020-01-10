@@ -1,15 +1,46 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 // import ReactDOM from "react-dom";
 import { withFormik, Form, Field} from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { Box } from 'grommet';
 import {axiosWithAuth} from '../Users/Dashboard'
+import {UserJokeAdded} from "../Users/UserJoke";
 
-function AddJokeForm({ values, errors, touched }) {
-	// console.log("values", values);
-	// console.log("errors", errors);
-	// console.log("touched", touched);
+
+function AddJokeForm({ values, errors, touched, status }) {
+	console.log("values", values);
+	console.log("errors", errors);
+	console.log("touched", touched);
+	console.log("status", status);
+
+	const [jokeAdded, setJokeAdded] = useState([]);
+
+	// useEffect(() => {
+	// 	console.log("Changed:", status);
+	// 	status && setJokeAdded(jokeAdded => [...jokeAdded
+	// 		, status]);
+	// }, [status]);
+	//
+	// console.log("Jokes", jokeAdded);
+
+	useEffect(() => {
+
+		const id = localStorage.getItem("id");
+
+		axiosWithAuth()
+			.get(`https://dad-jokes-8.herokuapp.com/api/restricted/saved`)
+			.then(response => {
+					console.log("Response User Jokes Added", response.data);
+					setJokeAdded(response.data)
+				}
+			)
+			.catch(error => {
+				console.log("Sorry", error);
+			});
+	}, []);
+
+	console.log("Joke Added", jokeAdded);
 
 	return (
 		<Box pad="small">
@@ -38,6 +69,15 @@ function AddJokeForm({ values, errors, touched }) {
 				</Box>
 				<button type="submit">Add Joke &rarr;</button>
 			</Form>
+			{/*{jokeAdded.map(item => {*/}
+			{/*		return (*/}
+			{/*	 <ul key={item.id}>*/}
+			{/*			<li>Joke: {item.question}</li>*/}
+			{/*			<li>Punch-line: {item.answer}</li>*/}
+			{/*		</ul>*/}
+			{/*		)*/}
+			{/*	})*/}
+			{/*}*/}
 		</Box>
 	);
 }
@@ -64,6 +104,7 @@ const FormikAddJokeForm = withFormik({
 			...values,
 			user_id: localStorage.getItem("id")
 		};
+		console.log("NewValue", values);
 		axiosWithAuth()
 			.post("https://dad-jokes-8.herokuapp.com/api/restricted/jokes", newValue)
 			.then(response => {
@@ -75,5 +116,7 @@ const FormikAddJokeForm = withFormik({
 			.catch(error => console.log(error.response));
 	}
 })(AddJokeForm);
+
+
 
 export default FormikAddJokeForm;

@@ -14,8 +14,8 @@ export default function UserJokesList(props) {
 		axiosWithAuth()
 			.get(`https://dad-jokes-8.herokuapp.com/api/restricted/jokes/${id}`)
 			.then(response => {
-				//console.log("Response User Jokes", response.data);
-				setUserJokes(response.data)
+				console.log("Response User Jokes", response.data);
+					setUserJokes(response.data)
 				}
 			)
 			.catch(error => {
