@@ -15,7 +15,7 @@ const JokeText = (props) => (
 			justify="center"
 			flex
 			// overflow={{ horizontal: 'hidden' }}
-			pad="medium"
+			// pad="medium"
 			height="auto"
 			margin={{
 				"top": "1%",
