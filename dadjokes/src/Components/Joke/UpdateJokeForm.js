@@ -64,7 +64,7 @@ const FormikUpdateJokeForm = withFormik({
 			user_id: Number(user_id) || "",
 			question: joke.question || "",
 			answer: joke.answer || "",
-			status: joke.status || status,
+			status: joke.status || joke.status,
 		};
 	},
 
