@@ -42,6 +42,7 @@ const UpdateJokeForm = ({ values, errors, touched }) =>{
 							type="checkbox"
 							name="status"
 							checked={values.status}
+							className="check-box"
 						/>
 						<span className="checkmark" />
 					</label>
@@ -63,7 +64,7 @@ const FormikUpdateJokeForm = withFormik({
 			user_id: Number(user_id) || "",
 			question: joke.question || "",
 			answer: joke.answer || "",
-			status: joke.status || "",
+			status: joke.status || status,
 		};
 	},
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button } from 'grommet';
 import { useHistory } from "react-router-dom";
-import {FormEdit, FormTrash } from "grommet-icons";
+import { Edit, FormEdit, Trash, FormTrash } from "grommet-icons";
 
 import JokeText from "../Joke/JokeText";
 import { axiosWithAuth } from "./Dashboard";
@@ -50,24 +50,22 @@ const UserJoke = (props) => {
 			<Box tag="div" margin={{ top: "0.5rem" }} width="100%">
 				{props.punch}
 			</Box>
-			{/* <Box>
-				<span className="delete_button"  onClick={() => {deleteJoke()}}>Delete Joke</span>
-			</Box>
-			{/* <UpdateJokeForm newState={newState}/> */}
-			 <Box>
-				 {/* <span className="delete_button"  onClick={populateUpdateHandler}
-					{...props} >Update</span>    */}
-				 
-			<Box tag="div" flex direction="row" margin={{ top: "0.5rem" }}>
-				<Button icon={<FormEdit color='brand'/>}  className="button button-edit" onClick={populateUpdateHandler}{...props}/>
-				<Button icon={<FormTrash color='brand'/>} className="button button-del" onClick={() => {deleteJoke()}}/>
-				{/*<Box pad="0">*/}
-
-				{/*</Box>*/}
-				{/*<Box pad="0">*/}
-
-				{/*</Box>*/}
-			</Box>
+			<Box tag="div" flex direction="row" margin={{ top: "1rem" }} className="button-group" width="100%">
+				<Button
+					// icon={<FormEdit color='brand'/>}
+					icon={<Edit color='brand'/>}
+					// label="Edit"
+					className="button button-edit"
+					onClick={populateUpdateHandler}
+					{...props}
+				/>
+				<Button
+					// icon={<FormTrash color='brand'/>}
+					icon={<Trash color='brand'/>}
+					// label="Delete"
+					className="button button-del"
+					onClick={() => {deleteJoke()}}
+				/>
 			</Box>
 		</JokeText>
 	</article>

@@ -219,6 +219,9 @@ body .appbar h1 a {
   -ms-user-select: none;
   user-select: none;
 }
+.entry form .checkbox-container:hover input ~ .checkmark {
+  background-color: #e7e7e7;
+}
 .entry form .checkbox-container input.check-box {
   position: absolute;
   opacity: 0;
@@ -228,6 +231,12 @@ body .appbar h1 a {
   height: 0;
   width: 0;
 }
+.entry form .checkbox-container input.check-box:checked ~ .checkmark {
+  background-color: #2e7fd6;
+}
+.entry form .checkbox-container input.check-box:checked ~ .checkmark:after {
+  display: block;
+}
 .entry form .checkbox-container .checkmark {
   position: absolute;
   top: 0;
@@ -236,15 +245,49 @@ body .appbar h1 a {
   width: 18px;
   background-color: #e7e7e7;
 }
+.entry form .checkbox-container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 article {
   width: 100%;
   text-align: center;
 }
+article .button-group {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
 article button.button {
   background: #f1f227;
-  padding: 2px;
+  padding: 8px;
   border: 2px solid #7aade4;
-  margin: 0 3px;
+  width: 49%;
+}
+article button.button div {
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -o-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
 }
 .main {
   top: 50px;
