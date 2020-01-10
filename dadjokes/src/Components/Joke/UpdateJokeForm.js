@@ -14,44 +14,88 @@ const UpdateJokeForm = ({ values, errors, touched }) =>{
 	// console.log("touched", touched);
 	
 	return (
+		// <Box tag="section" className="entry" pad="medium" >
+		// 	<Box tag="div" direction='row' pad="0" >
+		// 		<Box direction="row" align="start" pad={{ top: 'small' }}>
+		// 			<Button	icon={<Previous color='brand'/>} onClick={() => history.goBack()} />
+		// 		</Box>
+		// 		<Box justify='start' margin="small" >
+		// 			<Heading level="2" color="brand" margin="small">Update your Joke</Heading>
+		//
+		// <Box pad="small">
+		// 	<Form>
+		// 		<Box pad={{ bottom: 'small' }}>
+		// 			<label>Joke</label>
+		// 			<Field type="text" name="question" />
+		// 			{touched.question && errors.question && <p>{errors.question}</p>}
+		// 		</Box>
+		// 		<Box pad={{ bottom: 'small' }}>
+		// 			<label>Punch-line</label>
+		// 			<Field type="text" name="answer" />
+		// 			{touched.answer && errors.answer && <p>{errors.answer}</p>}
+		// 		</Box>
+		// 		<Box pad={{ bottom: 'small' }}>
+		// 			<label className="checkbox-container">
+		// 				Public?
+		// 				<Field
+		// 					type="checkbox"
+		// 					name="status"
+		// 					checked={values.status}
+		// 					className="check-box"
+		// 				/>
+		// 				<span className="checkmark" />
+		// 			</label>
+		// 		</Box>
+		// 		<button type="submit">Update Joke &rarr;</button>
+		// 	</Form>
+		// </Box>
+		//
+		// </Box>
+		// 	</Box>
+		// </Box>
 
 		<Box tag="section" className="entry" pad="medium" >
-			<Box tag="div" direction='row' pad="0" >
-				<Box direction="row" align="start" pad={{ top: 'small' }}>
-					<Button	icon={<Previous color='brand'/>} onClick={() => history.goBack()} />
+			<Box tag="div" direction="column" pad="0" >
+				<Box tag="div" direction="row" pad={{ right: "40px" }}>
+					<Box direction="row" align="start" pad={{ top: 'small' }}>
+						<Button	icon={<Previous color='brand'/>} onClick={() => history.goBack()} className="back-button"/>
+					</Box>
+					<Box justify='start' margin="small" flex>
+						<Heading level="2" color="brand" margin="small">
+							Hi,
+						</Heading>
+						<Box justify='start' margin="0" >
+							<Heading level="3" margin="small">Update your Joke</Heading>
+							<Box pad="small">
+								<Form>
+									<Box pad={{ bottom: 'medium' }}>
+										<label>Joke</label>
+										<Field type="text" name="question" />
+										{touched.question && errors.question && <p>{errors.question}</p>}
+									</Box>
+									<Box pad={{ bottom: 'medium' }}>
+										<label>Punch-line</label>
+										<Field type="text" name="answer" />
+										{touched.answer && errors.answer && <p>{errors.answer}</p>}
+									</Box>
+									<Box pad={{ bottom: 'medium' }}>
+										<label className="checkbox-container">
+											<Box tag="span">Public?</Box>
+											<Field
+												type="checkbox"
+												name="status"
+												checked={values.status}
+												className="check-box"
+											/>
+											<span className="checkmark" />
+										</label>
+									</Box>
+									<button type="submit">Update Joke &rarr;</button>
+								</Form>
+							</Box>
+						</Box>
+					</Box>
 				</Box>
-				<Box justify='start' margin="small" >
-					<Heading level="2" color="brand" margin="small">Update your Joke</Heading>
-
-		<Box pad="small">
-			<Form>
-				<Box pad={{ bottom: 'small' }}>
-					<label>Joke</label>
-					<Field type="text" name="question" />
-					{touched.question && errors.question && <p>{errors.question}</p>}
-				</Box>
-				<Box pad={{ bottom: 'small' }}>
-					<label>Punch-line</label>
-					<Field type="text" name="answer" />
-					{touched.answer && errors.answer && <p>{errors.answer}</p>}
-				</Box>
-				<Box pad={{ bottom: 'small' }}>
-					<label className="checkbox-container">
-						Public?
-						<Field
-							type="checkbox"
-							name="status"
-							checked={values.status}
-							className="check-box"
-						/>
-						<span className="checkmark" />
-					</label>
-				</Box>
-				<button type="submit">Update Joke &rarr;</button>
-			</Form>
-		</Box>
-
-		</Box>
 			</Box>
 		</Box>
 	);

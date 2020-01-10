@@ -23,12 +23,14 @@ export default function UserJokesList(props) {
 			});
 	}, []);
 
+	const userJokesMap = userJokes.reverse();
+
 	return (
 		<Box direction='row' flex overflow="auto" className="main" pad="0" >
 			<Box className="jokes-list" flex align='center' justify='center' pad="0">
-				{userJokes.map(item => {
-					return <UserJoke text={item.question} punch={item.answer} id={item.id} populateJoke={props.populateJoke} status={item.status} key={item.id} />
-				})
+				{userJokesMap.map(item => {
+						return <UserJoke text={item.question} punch={item.answer} id={item.id} populateJoke={props.populateJoke} status={item.status} key={item.id} />
+					})
 				}
 			</Box>
 		</Box>
