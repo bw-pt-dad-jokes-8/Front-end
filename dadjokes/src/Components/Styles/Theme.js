@@ -6,6 +6,7 @@ const theme = {
 			secondary: '#F1F227',
 			light: '#FFFFFF',
 			lightShade: '#E7E7E7',
+			focus: 'transparent',
 		},
 		font: {
 			family: 'Roboto',

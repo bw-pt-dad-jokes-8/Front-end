@@ -98,14 +98,18 @@ function App() {
           return <EntryLogin {...routeProps} />
         }}
       />
-      <Route exact path='/dashboard' 
-      render ={ routeProps =>{
-       return <Dashboard {...routeProps} farce= {farce} populateJoke={populateJoke}/>}}
-       />
-        <Route exact path='/update' 
-      render ={ routeProps =>{
-       return <FormikUpdateJokeForm {...routeProps} newState= {searchResults} joke={joke}/>}}
-       />
+      <Route
+        exact path='/dashboard'
+        render ={ routeProps =>{
+          return <Dashboard {...routeProps} farce={searchResults} populateJoke={populateJoke} />
+        }}
+      />
+      <Route
+        exact path='/update'
+        render ={ routeProps =>{
+          return <FormikUpdateJokeForm {...routeProps} newState={searchResults} joke={joke} />
+        }}
+      />
       {/* <Route exact path='/update' component={FormikUpdateJokeForm}/> */}
       {/* <Route exact path='/add' component={JokeAdd} /> */}
     

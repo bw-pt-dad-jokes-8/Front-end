@@ -24,7 +24,7 @@ export default function Joke(props) {
 						tag="div"
 						width="100%"
 						pad="large"
-						background="#6fffb0"
+						background="#2E7FD6"
 					>
 						{props.punch}
 					</Box>

@@ -304,6 +304,11 @@ body {
   top: 60px;
   width: 100%;
 }
+.search .search-bar {
+  border: 0;
+  border-bottom: 4px solid #e7e7e7;
+  border-radius: 0;
+}
 .userbar {
   width: 100%;
   position: fixed;

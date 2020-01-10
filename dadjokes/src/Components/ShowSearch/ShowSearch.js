@@ -11,7 +11,7 @@ export default function ShowSearch({ setSearchTerm }) {
 
 	return (
 		<ShowSearchBar className="search">
-			<TextInput type="text" placeholder="Search for a joke" onChange={handleChange} />
+			<TextInput type="text" placeholder="Search for a joke" onChange={handleChange} className="search-bar" />
 		</ShowSearchBar>
 	)
 }

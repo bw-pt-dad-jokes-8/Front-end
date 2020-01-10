@@ -7,9 +7,6 @@ import JokeText from "../Joke/JokeText";
 import { axiosWithAuth } from "./Dashboard";
 // import UpdateJokeForm from "../Joke/UpdateJokeForm";
 
-
-
-
 const UserJoke = (props) => {
 	// console.log(props);
 	let history = useHistory();
@@ -40,7 +37,6 @@ const UserJoke = (props) => {
 			};
 	
 	return (
-	
 	<article>
 		<JokeText tag="div" className="joke joke-text" pad="medium" border={[{ color: 'lightShade', size: 'medium' }]}>
 
@@ -70,5 +66,23 @@ const UserJoke = (props) => {
 		</JokeText>
 	</article>
 )};
+
+export const UserJokeAdded = (props) => {
+
+	return (
+		<article>
+			<JokeText tag="div" className="joke joke-text" pad="medium" border={[{ color: 'lightShade', size: 'medium' }]}>
+
+				<Box tag="div" width="100%" pad={{ vertical: "small" }}>
+					{props.text}
+				</Box>
+				<Box tag="div" margin={{ top: "0.5rem" }} width="100%" pad={{ vertical: "small" }}>
+					{props.punch}
+				</Box>
+			</JokeText>
+		</article>
+	)
+
+};
 
 export default UserJoke;
