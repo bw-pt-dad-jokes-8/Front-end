@@ -5,7 +5,7 @@ import Joke from "./Joke";
 
 export default function JokesList(props) {
 
-	const jokesList = props.items;
+	const jokesList = props.items.reverse();
 	//console.log("Jokes List", jokesList);
 
 	return (

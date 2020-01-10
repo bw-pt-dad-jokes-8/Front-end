@@ -24,21 +24,26 @@ export default function(props){
       //console.log(state)
         return (
           <Box tag="section" className="entry" pad="medium" >
-            <Box tag="div" direction='row' pad="0" >
-              <Box direction="row" align="start" pad={{ top: 'small' }}>
-                <Button	icon={<Previous color='brand'/>} onClick={() => history.goBack()} className="back-button"/>
+            <Box tag="div" direction="column" pad="0" >
+              <Box tag="div" direction="row" pad={{ right: "40px" }}>
+                <Box direction="row" align="start" pad={{ top: 'small' }}>
+                  <Button	icon={<Previous color='brand'/>} onClick={() => history.goBack()} className="back-button"/>
+                </Box>
+                <Box justify='start' margin="small" flex>
+                  <Heading level="2" color="brand" margin="small">
+                    Hi,
+                  </Heading>
+                  <Box justify='start' margin="0" >
+                    <Heading level="3" margin="small">Add your Joke</Heading>
+                    <FormikAddJokeForm />
+                  </Box>
+                  {/*<Box tag="div">*/}
+                  {/*  <UserJokesList farce = {state} populateJoke={props.populateJoke}/>*/}
+                  {/*</Box>*/}
+                </Box>
               </Box>
-              <Box justify='start' margin="small" flex>
-                <Heading level="2" color="brand" margin="small">
-                  Hi,
-                </Heading>
-                <Box justify='start' margin="0" >
-                  <Heading level="3" margin="small">Add your Joke</Heading>
-                  <FormikAddJokeForm />
-                </Box>
-                <Box tag="div">
-                  <UserJokesList farce = {state} populateJoke={props.populateJoke}/>
-                </Box>
+              <Box tag="div">
+                <UserJokesList farce = {state} populateJoke={props.populateJoke}/>
               </Box>
             </Box>
           </Box>
